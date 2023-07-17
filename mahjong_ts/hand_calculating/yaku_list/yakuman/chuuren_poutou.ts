@@ -1,4 +1,4 @@
-import { is_pin, is_man, is_sou } from "../../../utils";
+import { is_pin, is_man, is_sou, simplify } from "../../../utils";
 import { Yaku } from "../../../yaku";
 
 export class ChuurenPoutou extends Yaku {
@@ -68,3 +68,5 @@ export class ChuurenPoutou extends Yaku {
     }
 
     return indices.length == 1;
+  }
+}
