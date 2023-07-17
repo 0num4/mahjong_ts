@@ -1,33 +1,46 @@
-abstract class Yaku {
-  yakuId: number | null;
-  tenhouId: number | null | undefined;
-  name: string | null | undefined;
-  hanOpen: number | null | undefined;
-  hanClosed: number | null | undefined;
-  isYakuman: boolean | null | undefined;
+export class Yaku {
+  yaku_id: number | null = null;
+  tenhou_id: number | null = null;
+  name: string | null = null;
+  han_open: any = null;
+  han_closed: any = null;
+  is_yakuman: any = null;
 
-  constructor(yakuId: number | null = null) {
-    this.yakuId = yakuId;
-    this.setAttributes();
+  constructor(yaku_id: number | null = null) {
+    this.tenhou_id = null;
+    this.yaku_id = yaku_id;
+
+    this.set_attributes();
   }
 
   toString(): string {
-    return this.name || "";
+    if (this.name === null) {
+      throw new Error("this.name not implemented.");
+    }
+    return this.name;
   }
 
-  // In TypeScript, the `toString` method is used for both string conversion and "repr"-like output
+  is_condition_met(hand: any, ...args: any[]): boolean {
+    throw new Error("Method not implemented.");
+  }
 
-  abstract isConditionMet(hand: any, ...args: any[]): boolean;
-
-  abstract setAttributes(): void;
+  set_attributes(): void {
+    throw new Error("Method not implemented.");
+  }
 
   get english(): string {
     console.warn("Use .name attribute instead of .english attribute");
-    return this.name || "";
+    if (this.name === null) {
+      throw new Error("this.name not implemented.");
+    }
+    return this.name;
   }
 
   get japanese(): string {
     console.warn("Use .name attribute instead of .japanese attribute");
-    return this.name || "";
+    if (this.name === null) {
+      throw new Error("this.name not implemented.");
+    }
+    return this.name;
   }
 }
