@@ -1,6 +1,6 @@
 import { Yaku } from "../../../yaku";
 import { HONOR_INDICES } from "../../../constants";
-
+import { all } from "../../../utils";
 export class Daichisei extends Yaku {
   tenhou_id: number;
   name: string;
@@ -25,11 +25,11 @@ export class Daichisei extends Yaku {
     this.is_yakuman = true;
   }
 
-  is_condition_met(hand: any[], ...args: any[]): boolean {
-    let indices = [].concat(...hand);
-    return all((x) => HONOR_INDICES.includes(x)) && hand.length == 7;
+  isConditionMet(hand: any[], ...args: any[]): boolean {
+    let indices = hand.reduce((z, y) => z.concat(y), []);
+    return (
+      indices.every((x: number) => HONOR_INDICES.includes(x)) &&
+      hand.length == 7
+    );
   }
-}
-function all(arg0: (x: any) => boolean) {
-  throw new Error("Function not implemented.");
 }

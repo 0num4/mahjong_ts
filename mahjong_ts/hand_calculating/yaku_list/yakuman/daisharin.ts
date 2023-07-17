@@ -57,7 +57,7 @@ export class Daisharin extends Yaku {
       return false;
     }
 
-    let indices = [].concat(...hand);
+    let indices: number[] = [].concat(...hand);
     indices = indices.map((x) => simplify(x));
 
     // check for pairs
