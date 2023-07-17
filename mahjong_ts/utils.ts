@@ -1,4 +1,4 @@
-import { FIVE_RED_MAN, FIVE_RED_PIN, FIVE_RED_SOU } from "./constants";
+import { CHUN, FIVE_RED_MAN, FIVE_RED_PIN, FIVE_RED_SOU } from "./constants";
 
 export function is_aka_dora(tile_136: number, aka_enabled: boolean): boolean {
   if (!aka_enabled) {
@@ -89,6 +89,34 @@ export function simplify(tile: number): number {
   } else {
     return tile - 27;
   }
+}
+
+export function find_isolated_tile_indices(hand34: number[]): number[] {
+  let isolatedIndices: number[] = [];
+
+  for (let x = 0; x <= CHUN; x++) {
+    if (is_honor(x) && hand34[x] === 0) {
+      isolatedIndices.push(x);
+    } else {
+      let simplified = simplify(x);
+
+      if (simplified === 0) {
+        if (hand34[x] === 0 && hand34[x + 1] === 0) {
+          isolatedIndices.push(x);
+        }
+      } else if (simplified === 8) {
+        if (hand34[x] === 0 && hand34[x - 1] === 0) {
+          isolatedIndices.push(x);
+        }
+      } else {
+        if (hand34[x] === 0 && hand34[x - 1] === 0 && hand34[x + 1] === 0) {
+          isolatedIndices.push(x);
+        }
+      }
+    }
+  }
+
+  return isolatedIndices;
 }
 
 // plus_dora
