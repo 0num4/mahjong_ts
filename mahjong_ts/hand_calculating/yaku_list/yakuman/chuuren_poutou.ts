@@ -48,7 +48,7 @@ export class ChuurenPoutou extends Yaku {
       return false;
     }
 
-    let indices = [].concat(...hand);
+    let indices: number[] = [].concat.apply([], hand);
     indices = indices.map((x) => simplify(x));
 
     if (indices.filter((x) => x == 0).length < 3) {
