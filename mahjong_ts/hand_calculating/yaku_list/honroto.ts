@@ -1,7 +1,7 @@
-import { Yaku } from "../../yaku";
 import { HONOR_INDICES, TERMINAL_INDICES } from "../../constants";
+import { Yaku } from "../../yaku";
 
-export class Tanyao extends Yaku {
+export class Honroto extends Yaku {
   tenhou_id: number;
   name: string;
   han_open: number;
@@ -10,24 +10,24 @@ export class Tanyao extends Yaku {
 
   constructor(yaku_id?: number) {
     super(yaku_id);
-    this.tenhou_id = 8;
-    this.name = "Tanyao";
-    this.han_open = 1;
-    this.han_closed = 1;
+    this.tenhou_id = 31;
+    this.name = "Honroutou";
+    this.han_open = 2;
+    this.han_closed = 2;
     this.is_yakuman = false;
   }
 
   set_attributes(): void {
-    this.tenhou_id = 8;
-    this.name = "Tanyao";
-    this.han_open = 1;
-    this.han_closed = 1;
+    this.tenhou_id = 31;
+    this.name = "Honroutou";
+    this.han_open = 2;
+    this.han_closed = 2;
     this.is_yakuman = false;
   }
 
   is_condition_met(hand: any[], ...args: any[]): boolean {
     let indices = ([] as any[]).concat(...hand);
-    let result = TERMINAL_INDICES.concat(HONOR_INDICES);
-    return !indices.some((x) => result.includes(x));
+    let result = HONOR_INDICES.concat(TERMINAL_INDICES);
+    return indices.every((x) => result.includes(x));
   }
 }

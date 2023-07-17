@@ -8,8 +8,16 @@ export class YakuhaiEast extends Yaku {
   hanClosed: number;
   isYakuman: boolean;
 
-  constructor(id: number | null = null) {
-    super(id);
+  constructor(yaku_id?: number) {
+    super(yaku_id);
+    this.tenhouId = 10;
+    this.name = "Yakuhai (east)";
+    this.hanOpen = 1;
+    this.hanClosed = 1;
+    this.isYakuman = false;
+  }
+
+  set_attributes(): void {
     this.tenhouId = 10;
     this.name = "Yakuhai (east)";
     this.hanOpen = 1;

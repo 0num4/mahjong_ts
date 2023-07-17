@@ -61,28 +61,63 @@ import { Riichi } from "./yaku_list/riichi";
 import { Rinshan } from "./yaku_list/rinshan";
 import { YakuhaiSouth } from "./yaku_list/south";
 import { YakuhaiWest } from "./yaku_list/west";
-import {
-  Chiihou,
-  Chinroutou,
-  ChuurenPoutou,
-  DaburuChuurenPoutou,
-  DaburuKokushiMusou,
-  Daichisei,
-  Daisangen,
-  Daisharin,
-  DaiSuushii,
-  KokushiMusou,
-  Paarenchan,
-  RenhouYakuman,
-  Ryuuiisou,
-  Sashikomi,
-  Shousuushii,
-  Suuankou,
-  SuuankouTanki,
-  Suukantsu,
-  Tenhou,
-  Tsuuiisou,
-} from "./yaku_list/yakuman";
+import { Tanyao } from "./yaku_list/tanyao";
+import { Dora } from "./yaku_list/dora";
+// import {
+//   Chiihou,
+//   Chinroutou,
+//   ChuurenPoutou,
+//   DaburuChuurenPoutou,
+//   DaburuKokushiMusou,
+//   Daichisei,
+//   Daisangen,
+//   Daisharin,
+//   DaiSuushii,
+//   KokushiMusou,
+//   Paarenchan,
+//   RenhouYakuman,
+//   Ryuuiisou,
+//   Sashikomi,
+//   Shousuushii,
+//   Suuankou,
+//   SuuankouTanki,
+//   Suukantsu,
+//   Tenhou,
+//   Tsuuiisou,
+// } from "./yaku_list/yakuman";
+import { Iipeiko } from "./yaku_list/Iipeiko";
+import { YakuhaiOfPlace } from "./yaku_list/yakuhai_place";
+import { Sanshoku } from "./yaku_list/sanshoku";
+import { YakuhaiOfRound } from "./yaku_list/yakuhai_round";
+import { Honroto } from "./yaku_list/honroto";
+import { Toitoi } from "./yaku_list/toitoi";
+import { Sanankou } from "./yaku_list/sanankou";
+import { SanKantsu } from "./yaku_list/sanKantsu";
+import { SanshokuDoukou } from "./yaku_list/sanshoku_douko";
+import { Shosangen } from "./yaku_list/shosangen";
+import { Honitsu } from "./yaku_list/honitsu";
+import { Junchan } from "./yaku_list/junchan";
+import { Ryanpeikou } from "./yaku_list/ryanpeiko";
+import { Tenhou } from "./yaku_list/yakuman/tenhou";
+import { DaburuChuurenPoutou } from "./yaku_list/yakuman/daburu_chuuren_poutou";
+import { SuuankouTanki } from "./yaku_list/yakuman/suuankou_tanki";
+import { DaburuKokushiMusou } from "./yaku_list/yakuman/daburu_kokushi_musou";
+import { DaiSuushii } from "./yaku_list/yakuman/daisuushi";
+import { Daichisei } from "./yaku_list/yakuman/daichisei";
+import { Daisharin } from "./yaku_list/yakuman/daisharin";
+import { Chinroutou } from "./yaku_list/yakuman/chinroto";
+import { Tsuuiisou } from "./yaku_list/yakuman/tsuisou";
+import { Suukantsu } from "./yaku_list/yakuman/suukantsu";
+import { Ryuuiisou } from "./yaku_list/yakuman/ryuisou";
+import { Shousuushii } from "./yaku_list/yakuman/shousuushi";
+import { Daisangen } from "./yaku_list/yakuman/daisangen";
+import { Suuankou } from "./yaku_list/yakuman/suuankou";
+import { ChuurenPoutou } from "./yaku_list/yakuman/chuuren_poutou";
+import { Chiihou } from "./yaku_list/yakuman/chiihou";
+import { RenhouYakuman } from "./yaku_list/yakuman/renhou_yakuman";
+import { Sashikomi } from "./yaku_list/yakuman/sashikomi";
+import { Paarenchan } from "./yaku_list/yakuman/paarenchan";
+import { KokushiMusou } from "./yaku_list/yakuman/kokushi";
 
 export class YakuConfig {
   tsumo: Tsumo;

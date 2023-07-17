@@ -1,7 +1,7 @@
 import { Yaku } from "../../yaku";
 import { is_chi, is_man, is_pin, is_sou, simplify } from "../../utils";
 
-class Sanshoku extends Yaku {
+export class Sanshoku extends Yaku {
   tenhou_id: number;
   name: string;
   han_open: number | null;
@@ -10,6 +10,11 @@ class Sanshoku extends Yaku {
 
   constructor(yaku_id?: number) {
     super(yaku_id);
+    this.tenhou_id = 25;
+    this.name = "Sanshoku Doujun";
+    this.han_open = 1;
+    this.han_closed = 2;
+    this.is_yakuman = false;
   }
 
   set_attributes(): void {
