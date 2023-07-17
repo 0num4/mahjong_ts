@@ -41,37 +41,30 @@
 //   YakuhaiWest,
 // } from "./yaku_list";
 
-import { Haitei } from "./yaku_list/haitei";
-import { Houtei } from "./yaku_list/houtei";
-import { Ippatsu } from "./yaku_list/ippatsu";
-import { OpenRiichi } from "./yaku_list/open_riichi";
-import { Riichi } from "./yaku_list/riichi";
-import { Rinshan } from "./yaku_list/rinshan";
+import {
+  Chiihou,
+  Chinroutou,
+  ChuurenPoutou,
+  DaburuChuurenPoutou,
+  DaburuKokushiMusou,
+  Daichisei,
+  Daisangen,
+  Daisharin,
+  DaiSuushii,
+  KokushiMusou,
+  Paarenchan,
+  RenhouYakuman,
+  Ryuuiisou,
+  Sashikomi,
+  Shousuushii,
+  Suuankou,
+  SuuankouTanki,
+  Suukantsu,
+  Tenhou,
+  Tsuuiisou,
+} from "./yaku_list/yakuman";
 
-// import {
-//   Chiihou,
-//   Chinroutou,
-//   ChuurenPoutou,
-//   DaburuChuurenPoutou,
-//   DaburuKokushiMusou,
-//   Daichisei,
-//   Daisangen,
-//   Daisharin,
-//   DaiSuushii,
-//   KokushiMusou,
-//   Paarenchan,
-//   RenhouYakuman,
-//   Ryuuiisou,
-//   Sashikomi,
-//   Shousuushii,
-//   Suuankou,
-//   SuuankouTanki,
-//   Suukantsu,
-//   Tenhou,
-//   Tsuuiisou,
-// } from "./yaku_list/yakuman";
-
-class YakuConfig {
+export class YakuConfig {
   tsumo: Tsumo;
   riichi: Riichi;
   open_riichi: OpenRiichi;

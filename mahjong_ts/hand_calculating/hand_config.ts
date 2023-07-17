@@ -1,6 +1,7 @@
 // import { YakuConfig } from "mahjong/hand_calculating/yaku_config";
 
 import { EAST } from "../constants";
+import { YakuConfig } from "./yaku_config";
 
 class HandConstants {
   static readonly KAZOE_LIMITED = 0;
