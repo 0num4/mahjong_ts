@@ -41,6 +41,13 @@
 //   YakuhaiWest,
 // } from "./yaku_list";
 
+import { Haitei } from "./yaku_list/haitei";
+import { Houtei } from "./yaku_list/houtei";
+import { Ippatsu } from "./yaku_list/ippatsu";
+import { OpenRiichi } from "./yaku_list/open_riichi";
+import { Riichi } from "./yaku_list/riichi";
+import { Rinshan } from "./yaku_list/rinshan";
+
 // import {
 //   Chiihou,
 //   Chinroutou,
