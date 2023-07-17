@@ -3,13 +3,13 @@
 import { EAST } from "../constants";
 import { YakuConfig } from "./yaku_config";
 
-class HandConstants {
+export class HandConstants {
   static readonly KAZOE_LIMITED = 0;
   static readonly KAZOE_SANBAIMAN = 1;
   static readonly KAZOE_NO_LIMIT = 2;
 }
 
-class OptionalRules {
+export class OptionalRules {
   has_open_tanyao: boolean = false;
   has_aka_dora: boolean = false;
   has_double_yakuman: boolean = true;
@@ -62,7 +62,7 @@ class OptionalRules {
   }
 }
 
-class HandConfig extends HandConstants {
+export class HandConfig extends HandConstants {
   yaku?: YakuConfig;
   options?: OptionalRules;
 
