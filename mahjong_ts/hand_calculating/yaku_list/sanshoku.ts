@@ -48,12 +48,12 @@ export class Sanshoku extends Yaku {
       for (let pin_item of pin_chi) {
         for (let man_item of man_chi) {
           // cast tile indices to 0..8 representation
-          sou_item = sou_item.map((x) => simplify(x));
-          pin_item = pin_item.map((x) => simplify(x));
-          man_item = man_item.map((x) => simplify(x));
+          sou_item = sou_item.map((x: any) => simplify(x));
+          pin_item = pin_item.map((x: any) => simplify(x));
+          man_item = man_item.map((x: any) => simplify(x));
           if (
-            sou_item.every((val, index) => val === pin_item[index]) &&
-            sou_item.every((val, index) => val === man_item[index])
+            sou_item.every((val: any, index: any) => val === pin_item[index]) &&
+            sou_item.every((val: any, index: any) => val === man_item[index])
           ) {
             return true;
           }

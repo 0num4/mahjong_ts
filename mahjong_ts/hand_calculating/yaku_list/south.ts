@@ -17,6 +17,14 @@ export class YakuhaiSouth extends Yaku {
     this.isYakuman = false;
   }
 
+  setAttributes(): void {
+    this.tenhouId = 10;
+    this.name = "Yakuhai (south)";
+    this.hanOpen = 1;
+    this.hanClosed = 1;
+    this.isYakuman = false;
+  }
+
   isConditionMet(hand: any, round_wind: any, ...args: any[]): boolean {
     if (round_wind !== SOUTH) {
       return false;

@@ -1,6 +1,6 @@
 import { Yaku } from "../../yaku";
-import { HONOR_INDICES } from "mahjong/constants";
 import { is_man, is_pin, is_sou } from "../../utils";
+import { HONOR_INDICES } from "../../constants";
 
 export class Honitsu extends Yaku {
   tenhou_id: number;

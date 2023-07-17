@@ -1,5 +1,5 @@
+import { Meld } from "../../../meld";
 import { Yaku } from "../../../yaku";
-import { Meld } from "../../../constants";
 
 export class Suukantsu extends Yaku {
   tenhou_id: number;

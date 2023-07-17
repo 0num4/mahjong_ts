@@ -17,7 +17,7 @@ export class YakuhaiEast extends Yaku {
     this.isYakuman = false;
   }
 
-  set_attributes(): void {
+  setAttributes(): void {
     this.tenhouId = 10;
     this.name = "Yakuhai (east)";
     this.hanOpen = 1;
