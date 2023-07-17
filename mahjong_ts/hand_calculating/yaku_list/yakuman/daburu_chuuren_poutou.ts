@@ -65,7 +65,7 @@ export class DaburuChuurenPoutou extends Yaku {
       return false;
     }
 
-    let indices = [].concat(...hand);
+    let indices: number[] = [].concat(...hand);
     indices = indices.map((x) => simplify(x));
 
     let required_counts = [3, 1, 1, 1, 1, 1, 1, 1, 3];
