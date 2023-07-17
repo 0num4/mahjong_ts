@@ -30,3 +30,6 @@ export class Daichisei extends Yaku {
     return all((x) => HONOR_INDICES.includes(x)) && hand.length == 7;
   }
 }
+function all(arg0: (x: any) => boolean) {
+  throw new Error("Function not implemented.");
+}

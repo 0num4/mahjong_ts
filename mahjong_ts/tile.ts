@@ -2,7 +2,7 @@
 // Note: You will need to convert the 'FIVE_RED_MAN', 'FIVE_RED_PIN', 'FIVE_RED_SOU' constants to TypeScript as well.
 import { FIVE_RED_MAN, FIVE_RED_PIN, FIVE_RED_SOU } from "./constants";
 
-class Tile {
+export class Tile {
   value: any;
   is_tsumogiri: boolean;
 
@@ -12,7 +12,43 @@ class Tile {
   }
 }
 
-class TilesConverter {
+export class TilesConverter {
+  //   static to_one_line_string_chatgpt_orig(
+  //     tiles: any[],
+  //     print_aka_dora: boolean = false
+  //   ): string {
+  //     tiles = tiles.sort();
+
+  //     let man = tiles.filter((t: any) => t < 36);
+
+  //     let pin = tiles
+  //       .filter((t: any) => 36 <= t && t < 72)
+  //       .map((t: any) => t - 36);
+
+  //     let sou = tiles
+  //       .filter((t: any) => 72 <= t && t < 108)
+  //       .map((t: any) => t - 72);
+
+  //     let honors = tiles.filter((t: any) => t >= 108).map((t: any) => t - 108);
+
+  //     function words(suits: any[], red_five: number, suffix: string) {
+  //       return suits.length > 0
+  //         ? suits
+  //             .map((i: any) =>
+  //               i === red_five && print_aka_dora ? "0" : (i / 4 + 1).toString()
+  //             )
+  //             .join("") + suffix
+  //         : "";
+  //     }
+
+  //     sou = words(sou, FIVE_RED_SOU - 72, "s");
+  //     pin = words(pin, FIVE_RED_PIN - 36, "p");
+  //     man = words(man, FIVE_RED_MAN, "m");
+  //     honors = words(honors, -1 - 108, "z");
+
+  //     return man + pin + sou + honors;
+  //   }
+
   static to_one_line_string(
     tiles: any[],
     print_aka_dora: boolean = false
@@ -31,7 +67,7 @@ class TilesConverter {
 
     let honors = tiles.filter((t: any) => t >= 108).map((t: any) => t - 108);
 
-    function words(suits: any[], red_five: number, suffix: string) {
+    function words(suits: any[], red_five: number, suffix: string): string {
       return suits.length > 0
         ? suits
             .map((i: any) =>
@@ -41,12 +77,12 @@ class TilesConverter {
         : "";
     }
 
-    sou = words(sou, FIVE_RED_SOU - 72, "s");
-    pin = words(pin, FIVE_RED_PIN - 36, "p");
-    man = words(man, FIVE_RED_MAN, "m");
-    honors = words(honors, -1 - 108, "z");
+    let souStr = words(sou, FIVE_RED_SOU - 72, "s");
+    let pinStr = words(pin, FIVE_RED_PIN - 36, "p");
+    let manStr = words(man, FIVE_RED_MAN, "m");
+    let honorsStr = words(honors, -1 - 108, "z");
 
-    return man + pin + sou + honors;
+    return manStr + pinStr + souStr + honorsStr;
   }
 
   static to_34_array(tiles: any[]): any[] {

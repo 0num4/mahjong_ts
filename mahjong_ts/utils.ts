@@ -106,3 +106,8 @@ export function plus_dora(tile: number, dora_indicator: number): number {
     return tile;
   }
 }
+
+// pythonのall関数
+function all(array: any[]): boolean {
+  return array.every(Boolean);
+}

@@ -1,5 +1,12 @@
 import { Yaku } from "../../../yaku";
-import { is_man, is_pair, is_pin, is_pon_or_kan, is_sou } from "../../../utils";
+import {
+  is_man,
+  is_pair,
+  is_pin,
+  is_pon_or_kan,
+  is_sou,
+  simplify,
+} from "../../../utils";
 import { TERMINAL_INDICES, HONOR_INDICES } from "../../../constants";
 
 export class DaburuChuurenPoutou extends Yaku {
