@@ -1,7 +1,7 @@
-import { Yaku } from "../yaku";
+import { Yaku } from "../../yaku";
 
 export class Riichi extends Yaku {
-  yaku_id: number | null;
+  //   yaku_id: number | null;
   tenhou_id: number;
   name: string;
   han_open: number | null;
