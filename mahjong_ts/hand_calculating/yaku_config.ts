@@ -41,6 +41,26 @@
 //   YakuhaiWest,
 // } from "./yaku_list";
 
+import { AkaDora } from "./yaku_list/aka_dora";
+import { Chun } from "./yaku_list/chun";
+import { DaburuOpenRiichi } from "./yaku_list/daburu_open_riichi";
+import { DaburuRiichi } from "./yaku_list/daburu_riichi";
+import { YakuhaiEast } from "./yaku_list/east";
+import { Haitei } from "./yaku_list/haitei";
+import { Haku } from "./yaku_list/haku";
+import { Hatsu } from "./yaku_list/hatsu";
+import { Houtei } from "./yaku_list/houtei";
+import { Ippatsu } from "./yaku_list/ippatsu";
+import { Ittsu } from "./yaku_list/ittsu";
+import { NagashiMangan } from "./yaku_list/nagashi_mangan";
+import { YakuhaiNorth } from "./yaku_list/north";
+import { OpenRiichi } from "./yaku_list/open_riichi";
+import { Pinfu } from "./yaku_list/pinfu";
+import { Renhou } from "./yaku_list/renhou";
+import { Riichi } from "./yaku_list/riichi";
+import { Rinshan } from "./yaku_list/rinshan";
+import { YakuhaiSouth } from "./yaku_list/south";
+import { YakuhaiWest } from "./yaku_list/west";
 import {
   Chiihou,
   Chinroutou,
