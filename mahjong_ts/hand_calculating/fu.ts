@@ -37,7 +37,7 @@ export class FuCalculator {
     let fu_details = [];
 
     if (hand.length === 7) {
-      return [{ fu: 25, reason: FuCalculator.BASE }], 25;
+      return { details: [{ fu: 25, reason: FuCalculator.BASE }], total: 25 };
     }
 
     let pair = hand.filter((x) => is_pair(x))[0];
