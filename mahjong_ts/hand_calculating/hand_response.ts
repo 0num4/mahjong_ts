@@ -1,19 +1,19 @@
 class HandResponse {
-  cost: Record<string, unknown> | null;
+  cost: any[] | null;
   han: number | null;
   fu: number | null;
-  fu_details: Array<Record<string, unknown>> | null;
-  yaku: Array<{ yaku_id: unknown }> | null;
+  fu_details: any[] | null;
+  yaku: Yaku[] | null;
   error: string | null;
   is_open_hand: boolean;
 
   constructor(
-    cost: Record<string, unknown> | null = null,
+    cost: any[] | null = null,
     han: number | null = null,
     fu: number | null = null,
-    yaku: Array<{ yaku_id: unknown }> | null = null,
+    yaku: Yaku[] | null = null,
     error: string | null = null,
-    fu_details: Array<Record<string, unknown>> | null = null,
+    fu_details: any[] | null = null,
     is_open_hand: boolean = false
   ) {
     this.cost = cost;
@@ -23,13 +23,13 @@ class HandResponse {
     this.is_open_hand = is_open_hand;
 
     if (fu_details) {
-      this.fu_details = fu_details.sort((a, b) => b["fu"] - a["fu"]);
+      this.fu_details = fu_details.sort((a, b) => b.fu - a.fu);
     } else {
       this.fu_details = null;
     }
 
     if (yaku) {
-      this.yaku = yaku.sort((a, b) => a.yaku_id - b.yaku_id);
+      this.yaku = yaku.sort((a, b) => a.yakuId - b.yakuId);
     } else {
       this.yaku = null;
     }
