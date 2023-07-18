@@ -2,7 +2,7 @@
 // import { Yaku } from "../Yaku";
 
 class Tsumo extends Yaku {
-  constructor(yakuId: number | null = null) {
+  constructor(yakuId: number) {
     super(yakuId);
   }
 

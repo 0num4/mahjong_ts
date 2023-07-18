@@ -9,7 +9,7 @@ export class Hatsu extends Yaku {
   hanClosed: number;
   isYakuman: boolean;
 
-  constructor(id: number | null = null) {
+  constructor(id: number) {
     super(id);
     this.tenhouId = 19;
     this.name = "Yakuhai (hatsu)";

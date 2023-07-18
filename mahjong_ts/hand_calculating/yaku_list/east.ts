@@ -8,7 +8,7 @@ export class YakuhaiEast extends Yaku {
   hanClosed: number;
   isYakuman: boolean;
 
-  constructor(yaku_id?: number) {
+  constructor(yaku_id: number) {
     super(yaku_id);
     this.tenhouId = 10;
     this.name = "Yakuhai (east)";
