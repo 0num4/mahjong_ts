@@ -1,6 +1,7 @@
 import { HONOR_INDICES, TERMINAL_INDICES } from "../constants";
-import { Meld } from "../meld";
+import { Meld, Tile } from "../meld";
 import { contains_terminals, is_pair, is_pon_or_kan, simplify } from "../utils";
+import { HandConfig } from "./hand_config";
 
 export class FuCalculator {
   static BASE = "base";
@@ -25,12 +26,12 @@ export class FuCalculator {
   static OPEN_TERMINAL_KAN = "open_terminal_kan";
 
   calculate_fu(
-    hand: any[],
-    win_tile: any,
-    win_group: any,
-    config: any,
-    valued_tiles: any[] = [],
-    melds: any[] = []
+    hand: Tile[][],
+    win_tile: Tile,
+    win_group: Tile[],
+    config: HandConfig,
+    valued_tiles: Tile[] = [], //多分numberでutilとかで定義してるやつ
+    melds: Meld[] = []
   ) {
     let win_tile_34 = Math.floor(win_tile / 4);
 
