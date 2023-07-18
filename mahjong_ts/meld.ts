@@ -39,7 +39,7 @@ export class Meld {
     )} ${this.tiles}`;
   }
 
-  get tiles_34(): any[] {
+  get tiles_34(): number[] {
     return this.tiles.map((x: any) => Math.floor(x / 4));
   }
 
