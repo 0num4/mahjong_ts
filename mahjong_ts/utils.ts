@@ -1,4 +1,10 @@
-import { CHUN, FIVE_RED_MAN, FIVE_RED_PIN, FIVE_RED_SOU } from "./constants";
+import {
+  CHUN,
+  FIVE_RED_MAN,
+  FIVE_RED_PIN,
+  FIVE_RED_SOU,
+  TERMINAL_INDICES,
+} from "./constants";
 
 export function is_aka_dora(tile_136: number, aka_enabled: boolean): boolean {
   if (!aka_enabled) {
@@ -76,6 +82,21 @@ export function is_terminal(tile: number): boolean {
 // is_terminal_or_honor
 export function is_terminal_or_honor(tile: number): boolean {
   return is_terminal(tile) || is_honor(tile);
+}
+
+export function is_dora_indicator_for_terminal(tile: number): boolean {
+  return (
+    tile === 7 ||
+    tile === 8 ||
+    tile === 16 ||
+    tile === 17 ||
+    tile === 25 ||
+    tile === 26
+  );
+}
+
+export function contains_terminals(hand_set: number[]): boolean {
+  return hand_set.some((x) => TERMINAL_INDICES.includes(x));
 }
 
 // simplify
