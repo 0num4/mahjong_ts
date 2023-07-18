@@ -23,7 +23,7 @@
     "sourceMap": true,
     "strict": true,
     "strictNullChecks": true,
-    "target": "es5",
+    "target": "es2015",
     "types": []
   },
   "include": ["./"],

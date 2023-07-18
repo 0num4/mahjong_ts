@@ -139,3 +139,49 @@ export function plus_dora(tile: number, dora_indicator: number): number {
 export function all(array: any[]): boolean {
   return array.every(Boolean);
 }
+function is2dArray(arg: any): boolean {
+  if (Array.isArray(arg) && arg.length > 0 && arg.every(Array.isArray)) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+export function product<T>(array2d: T[][]): T[][] {
+  if (!is2dArray(array2d)) {
+    throw new RangeError("Invalid argument");
+  }
+  if (array2d.length === 0) {
+    return [[]];
+  } else {
+    const head: T[] = array2d[0];
+    const tail: T[][] = array2d.slice(1);
+    const productTail: T[][] = tail.length === 0 ? [[]] : product(tail);
+    return head
+      .map((ahead) => productTail.map((atail) => [ahead].concat(atail)))
+      .flat(1);
+  }
+}
+
+export function* combinations<T>(iterable: Iterable<T>, r: number) {
+  const pool = [...iterable];
+  const n = pool.length;
+  if (n < r) return;
+
+  const indices = [...new Array(r)].map((_, i) => i);
+  yield indices.map((i) => pool[i]);
+  while (true) {
+    let i;
+    for (i = r - 1; i >= 0; i--) {
+      if (indices[i] !== n - (r - i)) {
+        break;
+      }
+    }
+    if (i === -1) return;
+    indices[i]++;
+    for (let j = i + 1; j < r; j++) {
+      indices[j] = indices[j - 1] + 1;
+    }
+    yield indices.map((i) => pool[i]);
+  }
+}
