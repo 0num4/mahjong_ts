@@ -128,13 +128,13 @@ export class TilesConverter {
       offset: number,
       red?: number
     ) {
-      let data: any[] = [];
-      let temp: any[] = [];
+      let data: number[] = [];
+      let temp: number[] = [];
       if (!str) return [];
       for (let i of str) {
         let tile = offset + (parseInt(i) - 1) * 4;
         if (i === "r" || i === "0") {
-          if (has_aka_dora) {
+          if (has_aka_dora && red) {
             temp.push(red);
             data.push(red);
           }
