@@ -12,6 +12,9 @@ export class Tile {
   }
 }
 
+export type TilesArray136 = number;
+export type TilesArray34 = number;
+
 export class TilesConverter {
   //   static to_one_line_string_chatgpt_orig(
   //     tiles: any[],
@@ -85,7 +88,7 @@ export class TilesConverter {
     return manStr + pinStr + souStr + honorsStr;
   }
 
-  static to_34_array(tiles: number[]): number[] {
+  static to_34_array(tiles: number[]): TilesArray34[] {
     let results = Array(34).fill(0);
     for (let tile of tiles) {
       tile = Math.floor(tile / 4);
@@ -94,9 +97,9 @@ export class TilesConverter {
     return results;
   }
 
-  static to_136_array(tiles: number[]): number[] {
-    let temp: any[] = [];
-    let results: any[] = [];
+  static to_136_array(tiles: number[]): TilesArray136[] {
+    let temp: TilesArray136[] = [];
+    let results: TilesArray136[] = [];
     for (let x = 0; x < 34; x++) {
       if (tiles[x]) {
         let temp_value = Array(tiles[x]).fill(x * 4);
@@ -122,14 +125,14 @@ export class TilesConverter {
     man?: string,
     honors?: string,
     has_aka_dora: boolean = false
-  ): number[] {
+  ): TilesArray136[] {
     function _split_string(
       str: string | undefined,
       offset: number,
       red?: number
-    ) {
-      let data: number[] = [];
-      let temp: number[] = [];
+    ): TilesArray136[] {
+      let data: TilesArray136[] = [];
+      let temp: TilesArray136[] = [];
       if (!str) return [];
       for (let i of str) {
         let tile = offset + (parseInt(i) - 1) * 4;
@@ -166,7 +169,7 @@ export class TilesConverter {
     pin?: string,
     man?: string,
     honors?: string
-  ): number[] {
+  ): TilesArray34[] {
     let results = TilesConverter.string_to_136_array(sou, pin, man, honors);
     results = TilesConverter.to_34_array(results);
     return results;
@@ -186,7 +189,7 @@ export class TilesConverter {
   static one_line_string_to_136_array(
     string: string,
     has_aka_dora: boolean = false
-  ): number[] {
+  ): TilesArray136[] {
     let sou = "";
     let pin = "";
     let man = "";
@@ -218,7 +221,7 @@ export class TilesConverter {
   static one_line_string_to_34_array(
     string: string,
     has_aka_dora: boolean = false
-  ): number[] {
+  ): TilesArray34[] {
     let results = TilesConverter.one_line_string_to_136_array(
       string,
       has_aka_dora
