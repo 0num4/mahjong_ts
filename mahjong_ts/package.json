@@ -11,6 +11,7 @@
     "build": "tsc"
   },
   "dependencies": {
+    "crypto": "^1.0.1",
     "itertools": "^2.1.2",
     "tslib": "^2.6.0"
   }
