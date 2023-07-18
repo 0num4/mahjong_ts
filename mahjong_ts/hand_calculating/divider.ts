@@ -5,7 +5,7 @@ import { is_chi, is_pon } from "../utils";
 import * as crypto from "crypto";
 import { permutations } from "itertools";
 
-class HandDivider {
+export class HandDivider {
   private dividerCache: { [key: string]: any[] };
   private cacheKey: string | null;
 
