@@ -12,6 +12,11 @@ export class Agari {
         }
 
         let isolatedTile = isolatedTiles.pop();
+        if (!isolatedTile) {
+          throw new Error(
+            "isolatedTile is undefined, pythonではここでエラーを投げる"
+          );
+        }
 
         tiles[meld[0]] -= 1;
         tiles[meld[1]] -= 1;
@@ -94,16 +99,16 @@ export class Agari {
     }
 
     if (
-      (n0 === 2) +
-        (n1 === 2) +
-        (n2 === 2) +
-        (tiles[27] === 2) +
-        (tiles[28] === 2) +
-        (tiles[29] === 2) +
-        (tiles[30] === 2) +
-        (tiles[31] === 2) +
-        (tiles[32] === 2) +
-        (tiles[33] === 2) !==
+      Number(n0 === 2) +
+        Number(n1 === 2) +
+        Number(n2 === 2) +
+        Number(tiles[27] === 2) +
+        Number(tiles[28] === 2) +
+        Number(tiles[29] === 2) +
+        Number(tiles[30] === 2) +
+        Number(tiles[31] === 2) +
+        Number(tiles[32] === 2) +
+        Number(tiles[33] === 2) !==
       1
     ) {
       return false;
