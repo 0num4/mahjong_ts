@@ -33,7 +33,10 @@ export class HandDivider {
     let closedHandTiles34 = [...tiles34];
 
     let openTileIndices =
-      melds.length > 0 ? [].concat(...melds.map((x) => x.tiles_34)) : [];
+      melds.length > 0 ? melds.flatMap((x) => x.tiles_34) : [];
+
+    // let openTileIndices =
+    //   melds.length > 0 ? [].concat(...melds.map((x) => x.tiles_34)) : [];
     for (let openItem of openTileIndices) {
       closedHandTiles34[openItem] -= 1;
     }
@@ -103,7 +106,7 @@ export class HandDivider {
       }
     }
 
-    if (useCache) {
+    if (useCache && this.cacheKey !== null) {
       this.dividerCache[this.cacheKey] = hands;
     }
 
