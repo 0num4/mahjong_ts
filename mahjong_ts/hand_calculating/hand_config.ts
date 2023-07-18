@@ -64,7 +64,7 @@ export class OptionalRules {
 
 export class HandConfig extends HandConstants {
   yaku?: YakuConfig;
-  options?: OptionalRules;
+  options: OptionalRules;
 
   is_tsumo: boolean = false;
   is_riichi: boolean = false;

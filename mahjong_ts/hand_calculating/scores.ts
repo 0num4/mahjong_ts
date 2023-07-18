@@ -10,10 +10,10 @@ class ScoresCalculator {
     let yakuLevel = "";
 
     if (han >= 13 && !isYakuman) {
-      if (config.options.kazoeLimit === HandConfig.KAZOE_LIMITED) {
+      if (config.options.kazoe_limit === HandConfig.KAZOE_LIMITED) {
         han = 13;
         yakuLevel = "kazoe yakuman";
-      } else if (config.options.kazoeLimit === HandConfig.KAZOE_SANBAIMAN) {
+      } else if (config.options.kazoe_limit === HandConfig.KAZOE_SANBAIMAN) {
         han = 12;
         yakuLevel = "kazoe sanbaiman";
       }
@@ -28,7 +28,7 @@ class ScoresCalculator {
     if (han >= 5) {
       if (han >= 78) {
         yakuLevel = "6x yakuman";
-        if (config.options.limitToSextupleYakuman) {
+        if (config.options.limit_to_sextuple_yakuman) {
           rounded = 48000;
         } else {
           const extraHan = Math.floor((han - 78) / 13);
@@ -90,12 +90,12 @@ class ScoresCalculator {
     let additional: number;
     let additionalBonus: number;
 
-    if (config.isTsumo) {
+    if (config.is_tsumo) {
       main = doubleRounded;
-      mainBonus = 100 * config.tsumiNumber;
+      mainBonus = 100 * config.tsumi_number;
       additionalBonus = mainBonus;
 
-      if (config.isDealer) {
+      if (config.is_dealer) {
         additional = main;
       } else {
         additional = rounded;
@@ -103,20 +103,20 @@ class ScoresCalculator {
     } else {
       additional = 0;
       additionalBonus = 0;
-      mainBonus = 300 * config.tsumiNumber;
+      mainBonus = 300 * config.tsumi_number;
 
-      if (config.isDealer) {
+      if (config.is_dealer) {
         main = sixRounded;
       } else {
         main = fourRounded;
       }
     }
 
-    let kyoutakuBonus = 1000 * config.kyoutakuNumber;
+    let kyoutakuBonus = 1000 * config.kyoutaku_number;
     let total =
       main + mainBonus + 2 * (additional + additionalBonus) + kyoutakuBonus;
 
-    if (config.isNagashiMangan) {
+    if (config.is_nagashi_mangan) {
       yakuLevel = "nagashi mangan";
     }
 
@@ -145,14 +145,14 @@ class Aotenjou extends ScoresCalculator {
     let fourRounded = Math.floor((4 * basePoints + 99) / 100) * 100;
     let sixRounded = Math.floor((6 * basePoints + 99) / 100) * 100;
 
-    if (config.isTsumo) {
+    if (config.is_tsumo) {
       return {
         main: doubleRounded,
-        additional: config.isDealer ? doubleRounded : rounded,
+        additional: config.is_dealer ? doubleRounded : rounded,
       };
     } else {
       return {
-        main: config.isDealer ? sixRounded : fourRounded,
+        main: config.is_dealer ? sixRounded : fourRounded,
         additional: 0,
       };
     }
