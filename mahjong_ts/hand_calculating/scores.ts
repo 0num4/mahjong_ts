@@ -1,4 +1,4 @@
-import { HandConfig } from "./hand_config";
+import { HandConfig, HandConstants } from "./hand_config";
 
 export type Cost = {
   main: number;
@@ -20,10 +20,10 @@ export class ScoresCalculator {
     let yakuLevel = "";
 
     if (han >= 13 && !isYakuman) {
-      if (config.options.kazoe_limit === HandConfig.KAZOE_LIMITED) {
+      if (config.options.kazoe_limit === HandConstants.KAZOE_LIMITED) {
         han = 13;
         yakuLevel = "kazoe yakuman";
-      } else if (config.options.kazoe_limit === HandConfig.KAZOE_SANBAIMAN) {
+      } else if (config.options.kazoe_limit === HandConstants.KAZOE_SANBAIMAN) {
         han = 12;
         yakuLevel = "kazoe sanbaiman";
       }
