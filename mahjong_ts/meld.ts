@@ -3,6 +3,7 @@
 import { TilesConverter } from "./tile";
 
 export type Tile = any;
+export type MeldType = "chi" | "pon" | "kan" | "shouminkan" | "nuki";
 
 export class Meld {
   static CHI = "chi";
@@ -11,16 +12,16 @@ export class Meld {
   static SHOUMINKAN = "shouminkan";
   static NUKI = "nuki";
 
-  who: any;
+  who: number | null;
   tiles: Tile[];
-  type: string | null;
-  from_who: any;
-  called_tile: any;
+  type: MeldType | null;
+  from_who: number | null;
+  called_tile: Tile | null;
   opened: boolean;
 
   constructor(
     tiles: Tile[],
-    meld_type?: string,
+    meld_type?: MeldType,
     opened: boolean = true,
     called_tile?: any,
     who?: number,
