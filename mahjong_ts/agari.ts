@@ -1,6 +1,6 @@
 import { find_isolated_tile_indices } from "./utils";
 
-class Agari {
+export class Agari {
   isAgari(tiles34: number[], openSets34?: number[][]): boolean {
     let tiles = [...tiles34];
 

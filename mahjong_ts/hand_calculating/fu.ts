@@ -2,7 +2,7 @@ import { HONOR_INDICES, TERMINAL_INDICES } from "../constants";
 import { Meld } from "../meld";
 import { contains_terminals, is_pair, is_pon_or_kan, simplify } from "../utils";
 
-class FuCalculator {
+export class FuCalculator {
   static BASE = "base";
   static PENCHAN = "penchan";
   static KANCHAN = "kanchan";

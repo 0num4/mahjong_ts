@@ -1,12 +1,12 @@
 import { HandConfig } from "./hand_config";
 
-class ScoresCalculator {
+export class ScoresCalculator {
   calculateScores(
     han: number,
     fu: number,
     config: HandConfig,
     isYakuman: boolean = false
-  ): ScoreResult {
+  ): any {
     let yakuLevel = "";
 
     if (han >= 13 && !isYakuman) {
@@ -132,7 +132,7 @@ class ScoresCalculator {
   }
 }
 
-class Aotenjou extends ScoresCalculator {
+export class Aotenjou extends ScoresCalculator {
   calculateScores(
     han: number,
     fu: number,

@@ -63,7 +63,7 @@ export class OptionalRules {
 }
 
 export class HandConfig extends HandConstants {
-  yaku?: YakuConfig;
+  yaku: YakuConfig;
   options: OptionalRules;
 
   is_tsumo: boolean = false;
