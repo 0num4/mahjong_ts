@@ -3,10 +3,10 @@
 import { FIVE_RED_MAN, FIVE_RED_PIN, FIVE_RED_SOU } from "./constants";
 
 export class Tile {
-  value: any;
+  value: number;
   is_tsumogiri: boolean;
 
-  constructor(value: any, is_tsumogiri: boolean) {
+  constructor(value: number, is_tsumogiri: boolean) {
     this.value = value;
     this.is_tsumogiri = is_tsumogiri;
   }
@@ -50,7 +50,7 @@ export class TilesConverter {
   //   }
 
   static to_one_line_string(
-    tiles: any[],
+    tiles: number[],
     print_aka_dora: boolean = false
   ): string {
     tiles = tiles.sort();
@@ -85,7 +85,7 @@ export class TilesConverter {
     return manStr + pinStr + souStr + honorsStr;
   }
 
-  static to_34_array(tiles: any[]): any[] {
+  static to_34_array(tiles: number[]): number[] {
     let results = Array(34).fill(0);
     for (let tile of tiles) {
       tile = Math.floor(tile / 4);
@@ -94,7 +94,7 @@ export class TilesConverter {
     return results;
   }
 
-  static to_136_array(tiles: any[]): any[] {
+  static to_136_array(tiles: number[]): number[] {
     let temp: any[] = [];
     let results: any[] = [];
     for (let x = 0; x < 34; x++) {
@@ -122,7 +122,7 @@ export class TilesConverter {
     man?: string,
     honors?: string,
     has_aka_dora: boolean = false
-  ): any[] {
+  ): number[] {
     function _split_string(
       str: string | undefined,
       offset: number,
@@ -166,7 +166,7 @@ export class TilesConverter {
     pin?: string,
     man?: string,
     honors?: string
-  ): any[] {
+  ): number[] {
     let results = TilesConverter.string_to_136_array(sou, pin, man, honors);
     results = TilesConverter.to_34_array(results);
     return results;
@@ -174,7 +174,7 @@ export class TilesConverter {
 
   static find_34_tile_in_136_array(
     tile34: number,
-    tiles: any[]
+    tiles: number[]
   ): number | null {
     if (tile34 === null || tile34 > 33) return null;
     let tile = tile34 * 4;
@@ -186,7 +186,7 @@ export class TilesConverter {
   static one_line_string_to_136_array(
     string: string,
     has_aka_dora: boolean = false
-  ): any[] {
+  ): number[] {
     let sou = "";
     let pin = "";
     let man = "";
@@ -218,7 +218,7 @@ export class TilesConverter {
   static one_line_string_to_34_array(
     string: string,
     has_aka_dora: boolean = false
-  ): any[] {
+  ): number[] {
     let results = TilesConverter.one_line_string_to_136_array(
       string,
       has_aka_dora
