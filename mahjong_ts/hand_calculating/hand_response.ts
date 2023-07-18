@@ -1,5 +1,7 @@
-class HandResponse {
-  cost: any[] | null;
+import { Cost } from "./scores";
+
+export class HandResponse {
+  cost: Cost | null;
   han: number | null;
   fu: number | null;
   fu_details: HandResponse[] | null; //もしかしたらany[]かも
@@ -8,7 +10,7 @@ class HandResponse {
   is_open_hand: boolean;
 
   constructor(
-    cost: any[] | null = null,
+    cost: Cost | null = null,
     han: number | null = null,
     fu: number | null = null,
     yaku: Yaku[] | null = null,

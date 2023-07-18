@@ -2,12 +2,12 @@ import { HandConfig } from "./hand_config";
 
 export type Cost = {
   main: number;
-  mainBonus: number;
+  mainBonus?: number;
   additional: number;
-  additionalBonus: number;
-  kyoutakuBonus: number;
-  total: number;
-  yakuLevel: string;
+  additionalBonus?: number;
+  kyoutakuBonus?: number;
+  total?: number;
+  yakuLevel?: string;
 };
 
 export class ScoresCalculator {
@@ -148,7 +148,7 @@ export class Aotenjou extends ScoresCalculator {
     fu: number,
     config: HandConfig,
     isYakuman: boolean = false
-  ): object {
+  ): Cost {
     let basePoints = fu * Math.pow(2, 2 + han);
     let rounded = Math.floor((basePoints + 99) / 100) * 100;
     let doubleRounded = Math.floor((2 * basePoints + 99) / 100) * 100;
