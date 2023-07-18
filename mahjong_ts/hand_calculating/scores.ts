@@ -1,12 +1,22 @@
 import { HandConfig } from "./hand_config";
 
+export type Cost = {
+  main: number;
+  mainBonus: number;
+  additional: number;
+  additionalBonus: number;
+  kyoutakuBonus: number;
+  total: number;
+  yakuLevel: string;
+};
+
 export class ScoresCalculator {
   calculateScores(
     han: number,
     fu: number,
     config: HandConfig,
     isYakuman: boolean = false
-  ): any {
+  ): Cost {
     let yakuLevel = "";
 
     if (han >= 13 && !isYakuman) {

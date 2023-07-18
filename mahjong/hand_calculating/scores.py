@@ -148,6 +148,7 @@ class ScoresCalculator:
         if config.is_nagashi_mangan:
             yaku_level = "nagashi mangan"
 
+# 型が縛られてないし・・・(せめてclassにしなさーい！)
         ret_dict = {
             "main": main,
             "main_bonus": main_bonus,
