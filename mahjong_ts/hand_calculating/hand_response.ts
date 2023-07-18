@@ -2,7 +2,7 @@ class HandResponse {
   cost: any[] | null;
   han: number | null;
   fu: number | null;
-  fu_details: any[] | null;
+  fu_details: HandResponse[] | null; //もしかしたらany[]かも
   yaku: Yaku[] | null;
   error: string | null;
   is_open_hand: boolean;
