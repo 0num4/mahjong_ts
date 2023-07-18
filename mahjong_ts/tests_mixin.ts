@@ -67,7 +67,7 @@ class TestMixin {
     honors = ""
   ): Meld {
     let tiles = this._stringTo136Array(man, pin, sou, honors);
-    let meld = new Meld(meldType, tiles, isOpen, tiles[0], 0);
+    let meld = new Meld(tiles, meldType, isOpen, tiles[0], 0);
     return meld;
   }
 

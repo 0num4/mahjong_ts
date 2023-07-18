@@ -2,6 +2,8 @@
 // Note: You will need to convert the 'TilesConverter' class to TypeScript as well.
 import { TilesConverter } from "./tile";
 
+export type Tile = any;
+
 export class Meld {
   static CHI = "chi";
   static PON = "pon";
@@ -10,19 +12,19 @@ export class Meld {
   static NUKI = "nuki";
 
   who: any;
-  tiles: any[];
+  tiles: Tile[];
   type: string | null;
   from_who: any;
   called_tile: any;
   opened: boolean;
 
   constructor(
+    tiles: Tile[],
     meld_type?: string,
-    tiles?: any[],
     opened: boolean = true,
     called_tile?: any,
-    who?: any,
-    from_who?: any
+    who?: number,
+    from_who?: number
   ) {
     this.type = meld_type || null;
     this.tiles = tiles || [];
