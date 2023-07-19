@@ -1,5 +1,9 @@
 import { HandDivider } from "./hand_calculating/divider";
-import { HandConfig, OptionalRules } from "./hand_calculating/hand_config";
+import {
+  HandConfig,
+  HandConstants,
+  OptionalRules,
+} from "./hand_calculating/hand_config";
 import { Meld } from "./meld";
 import { TilesConverter } from "./tile";
 
@@ -84,7 +88,7 @@ class TestMixin {
     isTenhou = false,
     isRenhou = false,
     isChiihou = false,
-    playerWind = null,
+    playerWind: boolean | undefined = undefined,
     roundWind = null,
     hasOpenTanyao = false,
     hasAkaDora = false,
@@ -92,7 +96,7 @@ class TestMixin {
     renhouAsYakuman = false,
     allowDaisharin = false,
     allowDaisharinOtherSuits = false,
-    isOpenRiichi = false,
+    isOpenRiichi: boolean = false,
     hasSashikomiYakuman = false,
     limitToSextupleYakuman = true,
     paarenchanNeedsYaku = true,
@@ -103,6 +107,10 @@ class TestMixin {
       hasOpenTanyao,
       hasAkaDora,
       !disableDoubleYakuman,
+      HandConstants.KAZOE_LIMITED,
+      false,
+      true,
+      false,
       renhouAsYakuman,
       allowDaisharin,
       allowDaisharinOtherSuits,
@@ -112,6 +120,7 @@ class TestMixin {
       paarenchanNeedsYaku
     );
 
+    console.log(isOpenRiichi);
     return new HandConfig(
       isTsumo,
       isRiichi,
