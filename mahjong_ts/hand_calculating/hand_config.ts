@@ -83,7 +83,7 @@ export class HandConfig {
   is_open_riichi: boolean;
 
   is_dealer: boolean;
-  player_wind: typeof WINDS | null;
+  player_wind: string | null; //typeof WINDS | null;
   round_wind: any;
   paarenchan: number;
 
@@ -103,8 +103,8 @@ export class HandConfig {
     is_tenhou = false,
     is_renhou = false,
     is_chiihou = false,
-    is_open_riichi = false,
-    player_wind = null,
+    is_open_riichi: boolean = false,
+    player_wind: string | null = null,
     round_wind = null,
     kyoutaku_number = 0,
     tsumi_number = 0,
@@ -127,10 +127,9 @@ export class HandConfig {
     this.is_renhou = is_renhou;
     this.is_chiihou = is_chiihou;
     this.is_open_riichi = is_open_riichi;
-
     this.player_wind = player_wind;
     this.round_wind = round_wind;
-    this.is_dealer = player_wind == "EAST";
+    this.is_dealer = player_wind === "EAST";
     this.paarenchan = paarenchan;
 
     this.kyoutaku_number = kyoutaku_number;

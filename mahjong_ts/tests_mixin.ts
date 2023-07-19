@@ -88,7 +88,7 @@ class TestMixin {
     isTenhou = false,
     isRenhou = false,
     isChiihou = false,
-    playerWind: boolean | undefined = undefined,
+    playerWind: string | undefined = undefined,
     roundWind = null,
     hasOpenTanyao = false,
     hasAkaDora = false,
@@ -134,9 +134,11 @@ class TestMixin {
       isTenhou,
       isRenhou,
       isChiihou,
+      isOpenRiichi,
       playerWind,
       roundWind,
-      isOpenRiichi,
+      0, // 供託
+      0, // 詰み(リー棒か？)
       paarenchan,
       options
     );
