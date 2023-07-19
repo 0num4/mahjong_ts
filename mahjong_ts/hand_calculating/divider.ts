@@ -1,6 +1,11 @@
 import { HONOR_INDICES } from "../constants";
 import { Meld } from "../meld";
-import { product, combinations } from "../utils";
+import {
+  product,
+  combinations,
+  getPermutations,
+  permutationsChatGPT,
+} from "../utils";
 import { is_chi, is_pon } from "../utils";
 import * as crypto from "crypto";
 import { permutations } from "itertools";
@@ -149,7 +154,7 @@ export class HandDivider {
       return [];
     }
 
-    let allPossibleCombinations = permutations(indices, 3);
+    let allPossibleCombinations = permutationsChatGPT(indices, 3);
 
     let validCombinations: any[] = [];
     for (let combination of allPossibleCombinations) {

@@ -118,6 +118,7 @@ import { RenhouYakuman } from "./yaku_list/yakuman/renhou_yakuman";
 import { Sashikomi } from "./yaku_list/yakuman/sashikomi";
 import { Paarenchan } from "./yaku_list/yakuman/paarenchan";
 import { KokushiMusou } from "./yaku_list/yakuman/kokushi";
+import { Tsumo } from "./yaku_list/tsumo";
 
 export class YakuConfig {
   tsumo: Tsumo;

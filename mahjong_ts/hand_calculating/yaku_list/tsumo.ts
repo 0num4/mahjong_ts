@@ -1,7 +1,7 @@
 // Import the superclass here
 // import { Yaku } from "../Yaku";
 
-class Tsumo extends Yaku {
+export class Tsumo extends Yaku {
   constructor(yakuId: number) {
     super(yakuId);
   }
