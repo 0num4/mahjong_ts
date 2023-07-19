@@ -134,5 +134,11 @@ export class FuCalculator {
         }
       }
     }
+    return { details: fu_details, total: this.round_fu(fu_details) };
+  }
+  round_fu(fu_details: any[]) {
+    // 22 -> 30 and etc.
+    const fu = fu_details.map((x) => x["fu"]).reduce((a, b) => a + b, 0);
+    return Math.ceil(fu / 10) * 10;
   }
 }
