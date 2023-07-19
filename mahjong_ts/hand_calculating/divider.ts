@@ -68,7 +68,7 @@ export class HandDivider {
         honor = [honor];
       }
 
-      let arrays = [[[pairIndex].fill(2)]];
+      let arrays: number[][][] = [[[pairIndex].fill(2)]];
       if (sou.length > 0) {
         arrays.push(sou);
       }
@@ -87,11 +87,11 @@ export class HandDivider {
       }
 
       // let's find all possible hand from our valid sets
-      for (let s of product(...arrays)) {
-        let hand = [];
+      for (let s of product(arrays)) {
+        let hand: number[][] = [];
         for (let item of s) {
           if (Array.isArray(item[0])) {
-            for (let x of item) {
+            for (let x of item as unknown as number[][]) {
               hand.push(x);
             }
           } else {
@@ -99,7 +99,7 @@ export class HandDivider {
           }
         }
 
-        hand.sort((a, b) => a[0] - b[0]);
+        hand.sort((a: number[], b: number[]) => a[0] - b[0]);
         if (hand.length === 5) {
           hands.push(hand);
         }
