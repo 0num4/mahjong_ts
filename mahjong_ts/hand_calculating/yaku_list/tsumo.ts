@@ -1,17 +1,15 @@
-// Import the superclass here
-// import { Yaku } from "../Yaku";
-
+import { Yaku } from "../../yaku";
 export class Tsumo extends Yaku {
   constructor(yakuId: number) {
     super(yakuId);
   }
 
-  setAttributes() {
-    this.tenhouId = 0;
+  set_attributes() {
+    this.tenhou_id = 0;
     this.name = "Menzen Tsumo";
-    this.hanOpen = null;
-    this.hanClosed = 1;
-    this.isYakuman = false;
+    this.han_open = null;
+    this.han_closed = 1;
+    this.is_yakuman = false;
   }
 
   isConditionMet(hand: any, ...args: any[]): boolean {
