@@ -1,8 +1,9 @@
 import { HONOR_INDICES, TERMINAL_INDICES } from "../constants";
-import { Meld } from "../meld";
+import { Meld, Tile } from "../meld";
 import { contains_terminals, is_pair, is_pon_or_kan, simplify } from "../utils";
+import { HandConfig } from "./hand_config";
 
-class FuCalculator {
+export class FuCalculator {
   static BASE = "base";
   static PENCHAN = "penchan";
   static KANCHAN = "kanchan";
@@ -25,19 +26,19 @@ class FuCalculator {
   static OPEN_TERMINAL_KAN = "open_terminal_kan";
 
   calculate_fu(
-    hand: any[],
-    win_tile: any,
-    win_group: any,
-    config: any,
-    valued_tiles: any[] = [],
-    melds: any[] = []
+    hand: Tile[][],
+    win_tile: Tile,
+    win_group: Tile[],
+    config: HandConfig,
+    valued_tiles: Tile[] = [], //多分numberでutilとかで定義してるやつ
+    melds: Meld[] = []
   ) {
     let win_tile_34 = Math.floor(win_tile / 4);
 
     let fu_details = [];
 
     if (hand.length === 7) {
-      return [{ fu: 25, reason: FuCalculator.BASE }], 25;
+      return { details: [{ fu: 25, reason: FuCalculator.BASE }], total: 25 };
     }
 
     let pair = hand.filter((x) => is_pair(x))[0];
@@ -133,5 +134,11 @@ class FuCalculator {
         }
       }
     }
+    return { details: fu_details, total: this.round_fu(fu_details) };
+  }
+  round_fu(fu_details: any[]) {
+    // 22 -> 30 and etc.
+    const fu = fu_details.map((x) => x["fu"]).reduce((a, b) => a + b, 0);
+    return Math.ceil(fu / 10) * 10;
   }
 }

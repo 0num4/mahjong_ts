@@ -8,7 +8,7 @@ export class Ittsu extends Yaku {
   hanClosed: number;
   isYakuman: boolean;
 
-  constructor(id: number | null = null) {
+  constructor(id: number) {
     super(id);
     this.tenhouId = 24;
     this.name = "Ittsu";

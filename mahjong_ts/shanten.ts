@@ -1,4 +1,4 @@
-import { HONOR_INDICES, TERMINAL_INDICES } from "mahjong/constants";
+import { HONOR_INDICES, TERMINAL_INDICES } from "./constants";
 
 class Shanten {
   static AGARI_STATE = -1;

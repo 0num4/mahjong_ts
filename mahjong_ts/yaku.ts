@@ -6,7 +6,7 @@ export class Yaku {
   han_closed: any = null;
   is_yakuman: any = null;
 
-  constructor(yaku_id: number | null = null) {
+  constructor(yaku_id: number) {
     this.tenhou_id = null;
     this.yaku_id = yaku_id;
 

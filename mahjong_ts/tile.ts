@@ -3,14 +3,17 @@
 import { FIVE_RED_MAN, FIVE_RED_PIN, FIVE_RED_SOU } from "./constants";
 
 export class Tile {
-  value: any;
+  value: number;
   is_tsumogiri: boolean;
 
-  constructor(value: any, is_tsumogiri: boolean) {
+  constructor(value: number, is_tsumogiri: boolean) {
     this.value = value;
     this.is_tsumogiri = is_tsumogiri;
   }
 }
+
+export type TilesArray136 = number;
+export type TilesArray34 = number;
 
 export class TilesConverter {
   //   static to_one_line_string_chatgpt_orig(
@@ -50,7 +53,7 @@ export class TilesConverter {
   //   }
 
   static to_one_line_string(
-    tiles: any[],
+    tiles: number[],
     print_aka_dora: boolean = false
   ): string {
     tiles = tiles.sort();
@@ -85,7 +88,7 @@ export class TilesConverter {
     return manStr + pinStr + souStr + honorsStr;
   }
 
-  static to_34_array(tiles: any[]): any[] {
+  static to_34_array(tiles: number[]): TilesArray34[] {
     let results = Array(34).fill(0);
     for (let tile of tiles) {
       tile = Math.floor(tile / 4);
@@ -94,9 +97,9 @@ export class TilesConverter {
     return results;
   }
 
-  static to_136_array(tiles: any[]): any[] {
-    let temp: any[] = [];
-    let results: any[] = [];
+  static to_136_array(tiles: number[]): TilesArray136[] {
+    let temp: TilesArray136[] = [];
+    let results: TilesArray136[] = [];
     for (let x = 0; x < 34; x++) {
       if (tiles[x]) {
         let temp_value = Array(tiles[x]).fill(x * 4);
@@ -122,19 +125,19 @@ export class TilesConverter {
     man?: string,
     honors?: string,
     has_aka_dora: boolean = false
-  ): any[] {
+  ): TilesArray136[] {
     function _split_string(
       str: string | undefined,
       offset: number,
       red?: number
-    ) {
-      let data: any[] = [];
-      let temp: any[] = [];
+    ): TilesArray136[] {
+      let data: TilesArray136[] = [];
+      let temp: TilesArray136[] = [];
       if (!str) return [];
       for (let i of str) {
         let tile = offset + (parseInt(i) - 1) * 4;
         if (i === "r" || i === "0") {
-          if (has_aka_dora) {
+          if (has_aka_dora && red) {
             temp.push(red);
             data.push(red);
           }
@@ -166,7 +169,7 @@ export class TilesConverter {
     pin?: string,
     man?: string,
     honors?: string
-  ): any[] {
+  ): TilesArray34[] {
     let results = TilesConverter.string_to_136_array(sou, pin, man, honors);
     results = TilesConverter.to_34_array(results);
     return results;
@@ -174,7 +177,7 @@ export class TilesConverter {
 
   static find_34_tile_in_136_array(
     tile34: number,
-    tiles: any[]
+    tiles: number[]
   ): number | null {
     if (tile34 === null || tile34 > 33) return null;
     let tile = tile34 * 4;
@@ -186,7 +189,7 @@ export class TilesConverter {
   static one_line_string_to_136_array(
     string: string,
     has_aka_dora: boolean = false
-  ): any[] {
+  ): TilesArray136[] {
     let sou = "";
     let pin = "";
     let man = "";
@@ -218,7 +221,7 @@ export class TilesConverter {
   static one_line_string_to_34_array(
     string: string,
     has_aka_dora: boolean = false
-  ): any[] {
+  ): TilesArray34[] {
     let results = TilesConverter.one_line_string_to_136_array(
       string,
       has_aka_dora

@@ -1,12 +1,12 @@
 abstract class Yaku {
-  yakuId: number | null;
+  yakuId: number;
   tenhouId: number | null | undefined;
   name: string | null | undefined;
   hanOpen: number | null | undefined;
   hanClosed: number | null | undefined;
   isYakuman: boolean | null | undefined;
 
-  constructor(yakuId: number | null = null) {
+  constructor(yakuId: number) {
     this.yakuId = yakuId;
     this.setAttributes();
   }
