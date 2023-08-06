@@ -70,7 +70,6 @@ class TestMixin:
         has_daichisei=False,
         paarenchan=0,
     ):
-
         options = OptionalRules(
             has_open_tanyao=has_open_tanyao,
             has_aka_dora=has_aka_dora,
