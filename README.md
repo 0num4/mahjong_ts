@@ -17,3 +17,9 @@ pip install mahjong
 # Supported rules and usage examples
 
 You can find usage examples and information about all supported rules variations in the [wiki](https://github.com/MahjongRepository/mahjong/wiki)
+
+# poetry
+
+```shell
+poetry add black isort flake8 dlint flake8-print flake8-simplify flake8-bugbear
+```
