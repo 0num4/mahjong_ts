@@ -26,3 +26,19 @@ line_length = 120
 multi_line_output = 3
 use_parentheses = true
 skip_glob = "migrations"
+
+[tool.poetry]
+name = "mahjong-ts"
+version = "0.1.0"
+description = ""
+authors = ["0num4 <r.oonuma@matsuri-tech.com>"]
+readme = "README.md"
+packages = [{include = "mahjong_ts"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
