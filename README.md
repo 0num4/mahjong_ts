@@ -23,3 +23,13 @@ You can find usage examples and information about all supported rules variations
 ```shell
 poetry add black isort flake8 dlint flake8-print flake8-simplify flake8-bugbear
 ```
+
+setuptools を使っている
+
+よくわからんけど pyproject.toml あたりをガチャガチャやったら動いた
+`packages = [{include = "mahjong"}]`
+
+```
+Administrator in mahjong_ts on  feat/pydantic-types [!] is 📦 v0.1.0 via 🐍 v3.10.6 (mahjong-ts-py3.10)
+❯ python.bat .\doc\examples.py
+```
