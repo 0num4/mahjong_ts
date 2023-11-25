@@ -30,7 +30,14 @@ class HandCalculator {
   constructor() {
     this.config = new HandConfig();
   }
-  estimate_hand_value(tiles: number[], win_tile: number, is_tsumo: boolean, is_riichi: boolean, open_sets: number[][] | null = null, use_hand_divider_cache: boolean = true): any {
+  estimate_hand_value(
+    tiles: number[],
+    win_tile: number,
+    is_tsumo: boolean,
+    is_riichi: boolean,
+    open_sets: number[][] | null = null,
+    use_hand_divider_cache: boolean = true
+  ): any {
     this.hand_divider = new HandDivider();
 
     let agari = new Agari();
@@ -44,38 +51,39 @@ class HandCalculator {
     let melds;
 
     if (open_sets) {
-        open_hand = true;
-        melds = open_sets.map(x => new Meld(x));
+      open_hand = true;
+      melds = open_sets.map((x) => new Meld(x));
     } else {
-        melds = [];
+      melds = [];
     }
 
     this.config.is_open_hand = open_hand;
 
     if (this.config.is_nagashi_mangan) {
-        return new HandResponse({error: HandCalculator.ERR_NAGASHI_MANGAN});
+      return new HandResponse({ error: HandCalculator.ERR_NAGASHI_MANGAN });
     }
 
     if (this.config.is_nagashi_mangan) {
-      return new HandResponse({error: HandCalculator.ERR_NAGASHI_MANGAN});
-  }
-  
-  if (this.config.is_renhou && !this.config.options.has_renhou) {
-      return new HandResponse({error: HandCalculator.ERR_RENHOU_IS_CLOSED});
-  }
-  
-  if (this.config.is_renhou && this.config.options.renhou_as_yakuman) {
+      return new HandResponse({ error: HandCalculator.ERR_NAGASHI_MANGAN });
+    }
+
+    if (this.config.is_renhou && !this.config.options.has_renhou) {
+      return new HandResponse({ error: HandCalculator.ERR_RENHOU_IS_CLOSED });
+    }
+
+    if (this.config.is_renhou && this.config.options.renhou_as_yakuman) {
       this.config.yaku.renhou.rename();
       return new HandResponse({
-          cost: scores_calculator.calculate_scores(13, 0, this.config, true),
-          han: 13,
-          fu: 0,
-          hand_yaku: [this.config.yaku.renhou_yakuman],
-          error: null,
+        cost: scores_calculator.calculate_scores(13, 0, this.config, true),
+        han: 13,
+        fu: 0,
+        hand_yaku: [this.config.yaku.renhou_yakuman],
+        error: null,
       });
-  }
+    }
 
     if (!agari.is_agari(tiles_34, all_melds)) {
-        return new HandResponse({error: HandCalculator.ERR_HAND_NOT_WINNING});
+      return new HandResponse({ error: HandCalculator.ERR_HAND_NOT_WINNING });
     }
+  }
 }
