@@ -32,4 +32,36 @@ cd mahjong_ts
 bun run main.ts
 ```
 
-なぜか main branch だと動かないの謎
+# リポジトリの説明
+
+このリポジトリは/mahjong と/mahjong_ts の 2 つのフォルダから構成されています。
+/mahjong は Python で書かれた麻雀の役判定ライブラリです。(fork of https://github.com/MahjongRepository/mahjong)
+/mahjong_ts は/mahjong を TypeScript に移植したものです。
+
+# how to fork from original repository
+
+my mainstream branch is `main` , and original repository's mainstream branch is `master`.
+なので開発する時は main からブランチを切って開発することになる。upsteam が更新されていたら下記のようにして sync してから開発する。
+
+```
+
+cd mahjong/mahjong
+
+mahjong/mahjong on  main [$] via 🐍 v3.11.3 on ☁️
+❯ git remote -v
+origin https://github.com/0num4/mahjong_ts.git (fetch)
+origin https://github.com/0num4/mahjong_ts.git (push)
+originOld https://github.com/MahjongRepository/mahjong.git (fetch)
+originOld https://github.com/MahjongRepository/mahjong.git (push)
+
+mahjong/mahjong on  main [$] via 🐍 v3.11.3 on ☁️
+❯ git fetch originOld
+
+mahjong/mahjong on  main [$] via 🐍 v3.11.3 on ☁️
+❯ git merge originOld/master
+
+```
+
+```
+
+```
