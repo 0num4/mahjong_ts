@@ -45,23 +45,19 @@ my mainstream branch is `main` , and original repository's mainstream branch is 
 
 ```
 
-cd mahjong/mahjong
+cd mahjong
 
-mahjong/mahjong on  main [$] via 🐍 v3.11.3 on ☁️
+mahjong on  main [$] via 🐍 v3.11.3 on ☁️
 ❯ git remote -v
 origin https://github.com/0num4/mahjong_ts.git (fetch)
 origin https://github.com/0num4/mahjong_ts.git (push)
 originOld https://github.com/MahjongRepository/mahjong.git (fetch)
 originOld https://github.com/MahjongRepository/mahjong.git (push)
 
-mahjong/mahjong on  main [$] via 🐍 v3.11.3 on ☁️
+mahjong on  main [$] via 🐍 v3.11.3 on ☁️
 ❯ git fetch originOld
 
-mahjong/mahjong on  main [$] via 🐍 v3.11.3 on ☁️
+mahjong on  main [$] via 🐍 v3.11.3 on ☁️
 ❯ git merge originOld/master
-
-```
-
-```
 
 ```
