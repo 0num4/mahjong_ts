@@ -8,7 +8,7 @@ export class Riichi extends Yaku {
   han_closed: number;
   is_yakuman: boolean;
 
-  constructor(yaku_id: number | null = null) {
+  constructor(yaku_id: number) {
     super(yaku_id);
     this.tenhou_id = 1;
     this.name = "Riichi";

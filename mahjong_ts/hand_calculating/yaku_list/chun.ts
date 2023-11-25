@@ -8,7 +8,7 @@ export class Chun extends Yaku {
   hanClosed: number;
   isYakuman: boolean;
 
-  constructor(id: number | null = null) {
+  constructor(id: number) {
     super(id);
     this.tenhouId = 20;
     this.name = "Yakuhai (chun)";

@@ -1,11 +1,16 @@
 import { HONOR_INDICES } from "../constants";
 import { Meld } from "../meld";
-import { product, combinations } from "../utils";
+import {
+  product,
+  combinations,
+  getPermutations,
+  permutationsChatGPT,
+} from "../utils";
 import { is_chi, is_pon } from "../utils";
 import * as crypto from "crypto";
 import { permutations } from "itertools";
 
-class HandDivider {
+export class HandDivider {
   private dividerCache: { [key: string]: any[] };
   private cacheKey: string | null;
 
@@ -33,7 +38,10 @@ class HandDivider {
     let closedHandTiles34 = [...tiles34];
 
     let openTileIndices =
-      melds.length > 0 ? [].concat(...melds.map((x) => x.tiles_34)) : [];
+      melds.length > 0 ? melds.flatMap((x) => x.tiles_34) : [];
+
+    // let openTileIndices =
+    //   melds.length > 0 ? [].concat(...melds.map((x) => x.tiles_34)) : [];
     for (let openItem of openTileIndices) {
       closedHandTiles34[openItem] -= 1;
     }
@@ -65,7 +73,7 @@ class HandDivider {
         honor = [honor];
       }
 
-      let arrays = [[[pairIndex].fill(2)]];
+      let arrays: number[][][] = [[[pairIndex].fill(2)]];
       if (sou.length > 0) {
         arrays.push(sou);
       }
@@ -84,11 +92,11 @@ class HandDivider {
       }
 
       // let's find all possible hand from our valid sets
-      for (let s of product(...arrays)) {
-        let hand = [];
+      for (let s of product(arrays)) {
+        let hand: number[][] = [];
         for (let item of s) {
           if (Array.isArray(item[0])) {
-            for (let x of item) {
+            for (let x of item as unknown as number[][]) {
               hand.push(x);
             }
           } else {
@@ -96,14 +104,14 @@ class HandDivider {
           }
         }
 
-        hand.sort((a, b) => a[0] - b[0]);
+        hand.sort((a: number[], b: number[]) => a[0] - b[0]);
         if (hand.length === 5) {
           hands.push(hand);
         }
       }
     }
 
-    if (useCache) {
+    if (useCache && this.cacheKey !== null) {
       this.dividerCache[this.cacheKey] = hands;
     }
 
@@ -146,7 +154,7 @@ class HandDivider {
       return [];
     }
 
-    let allPossibleCombinations = permutations(indices, 3);
+    let allPossibleCombinations = permutationsChatGPT(indices, 3);
 
     let validCombinations: any[] = [];
     for (let combination of allPossibleCombinations) {

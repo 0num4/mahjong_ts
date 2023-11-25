@@ -6,7 +6,7 @@ class Chinitsu {
   han_closed: number;
   is_yakuman: boolean;
 
-  constructor(yaku_id: number | null = null) {
+  constructor(yaku_id: number) {
     this.yaku_id = yaku_id;
     this.tenhou_id = 35;
     this.name = "Chinitsu";
