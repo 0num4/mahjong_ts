@@ -9,7 +9,7 @@ export class DaiSuushii extends Yaku {
   han_closed: number;
   is_yakuman: boolean;
 
-  constructor(yaku_id?: number) {
+  constructor(yaku_id: number) {
     super(yaku_id);
     this.tenhou_id = 49;
     this.name = "Dai Suushii";

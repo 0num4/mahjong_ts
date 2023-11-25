@@ -8,7 +8,7 @@ export class DaburuKokushiMusou extends Yaku {
   han_closed: number;
   is_yakuman: boolean;
 
-  constructor(yaku_id?: number) {
+  constructor(yaku_id: number) {
     super(yaku_id);
     this.tenhou_id = 0; // Not provided in the original Python code
     this.name = "Daburu Kokushi Musou";

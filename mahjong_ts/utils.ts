@@ -168,6 +168,46 @@ function is2dArray(arg: any): boolean {
   }
 }
 
+export function getPermutations(array: string | any[], size: any) {
+  function p(t: string | any[], i: number) {
+    if (t.length === size) {
+      result.push(t);
+      return;
+    }
+    if (i + 1 > array.length) {
+      return;
+    }
+    p(t.concat(array[i]), i + 1);
+    p(t, i + 1);
+  }
+
+  var result: (string | any[])[] = [];
+  p([], 0);
+  return result;
+}
+
+export function permutationsChatGPT<T>(
+  elements: T[],
+  permutationLength: number
+): T[][] {
+  var result: T[][] = [];
+
+  function _permutations(startIndex: number, elementsChosen: T[]) {
+    if (elementsChosen.length === permutationLength) {
+      result.push(elementsChosen);
+    } else {
+      for (let i = 0; i < elements.length; i++) {
+        if (!elementsChosen.includes(elements[i])) {
+          _permutations(startIndex + 1, [...elementsChosen, elements[i]]);
+        }
+      }
+    }
+  }
+
+  _permutations(0, []);
+  return result;
+}
+
 export function product<T>(array2d: T[][]): T[][] {
   if (!is2dArray(array2d)) {
     throw new RangeError("Invalid argument");
@@ -184,25 +224,45 @@ export function product<T>(array2d: T[][]): T[][] {
   }
 }
 
-export function* combinations<T>(iterable: Iterable<T>, r: number) {
-  const pool = [...iterable];
-  const n = pool.length;
-  if (n < r) return;
+// export function* combinations<T>(iterable: Iterable<T>, r: number) {
+//   const pool = [...iterable];
+//   const n = pool.length;
+//   if (n < r) return;
 
-  const indices = [...new Array(r)].map((_, i) => i);
-  yield indices.map((i) => pool[i]);
-  while (true) {
-    let i;
-    for (i = r - 1; i >= 0; i--) {
-      if (indices[i] !== n - (r - i)) {
-        break;
+//   const indices = [...new Array(r)].map((_, i) => i);
+//   yield indices.map((i) => pool[i]);
+//   while (true) {
+//     let i;
+//     for (i = r - 1; i >= 0; i--) {
+//       if (indices[i] !== n - (r - i)) {
+//         break;
+//       }
+//     }
+//     if (i === -1) return;
+//     indices[i]++;
+//     for (let j = i + 1; j < r; j++) {
+//       indices[j] = indices[j - 1] + 1;
+//     }
+//     yield indices.map((i) => pool[i]);
+//   }
+// }
+
+export function combinations<T>(
+  elements: T[],
+  combinationLength: number
+): T[][] {
+  var result: T[][] = [];
+
+  function _combinations(startIndex: number, elementsChosen: T[]) {
+    if (elementsChosen.length === combinationLength) {
+      result.push(elementsChosen);
+    } else {
+      for (let i = startIndex; i < elements.length; i++) {
+        _combinations(i + 1, [...elementsChosen, elements[i]]);
       }
     }
-    if (i === -1) return;
-    indices[i]++;
-    for (let j = i + 1; j < r; j++) {
-      indices[j] = indices[j - 1] + 1;
-    }
-    yield indices.map((i) => pool[i]);
   }
+
+  _combinations(0, []);
+  return result;
 }
