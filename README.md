@@ -17,3 +17,19 @@ pip install mahjong
 # Supported rules and usage examples
 
 You can find usage examples and information about all supported rules variations in the [wiki](https://github.com/MahjongRepository/mahjong/wiki)
+
+# How to use
+
+```
+
+❯ git branch
+* feat/add-test
+  feat/migrate-test-folder
+  feat/migrate-typescript
+  main
+
+cd mahjong_ts
+bun run main.ts
+```
+
+なぜか main branch だと動かないの謎
