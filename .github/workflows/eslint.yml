@@ -13,9 +13,9 @@ on:
 
 jobs:
   eslint:
-    # defaults:
-    #   run:
-    #     working-directory: mahjong_ts
+    defaults:
+      run:
+        working-directory: mahjong_ts
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
