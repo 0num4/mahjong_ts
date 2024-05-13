@@ -1,26 +1,26 @@
 {
-  "name": "mahjong_ts",
-  "version": "1.0.0",
-  "main": "main.ts",
-  "license": "MIT",
-  "engines": {
-    "node": "^22.0.0"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "1.7.3",
-    "@types/node": "20.4.10",
-    "typescript": "5.1.6",
-    "vite": "4.5.3"
-  },
-  "scripts": {
-    "dev": "vite build",
-    "build": "tsc ./",
-    "lint:biome": "biome check",
-    "format:biome": "biome format"
-  },
-  "dependencies": {
-    "crypto": "1.0.1",
-    "itertools": "2.1.2",
-    "tslib": "2.6.2"
-  }
+	"name": "mahjong_ts",
+	"version": "1.0.0",
+	"main": "main.ts",
+	"license": "MIT",
+	"engines": {
+		"node": "^22.0.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.7.3",
+		"@types/node": "20.4.10",
+		"typescript": "5.1.6",
+		"vite": "4.5.3"
+	},
+	"scripts": {
+		"dev": "vite build",
+		"build": "tsc ./",
+		"lint:biome": "biome check",
+		"format:biome": "biome format"
+	},
+	"dependencies": {
+		"crypto": "1.0.1",
+		"itertools": "2.1.2",
+		"tslib": "2.6.2"
+	}
 }
