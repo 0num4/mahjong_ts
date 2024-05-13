@@ -14,7 +14,8 @@
   },
   "scripts": {
     "dev": "vite build",
-    "build": "tsc ./"
+    "build": "tsc ./",
+    "lint:biome": "biome check"
   },
   "dependencies": {
     "crypto": "1.0.1",
