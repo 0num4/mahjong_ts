@@ -13,3 +13,9 @@ https://biomejs.dev/guides/getting-started/
 ```
 yarn add --dev --exact @biomejs/biome
 ```
+
+初期化用のコマンドがある
+
+```
+yarn biome init
+```
