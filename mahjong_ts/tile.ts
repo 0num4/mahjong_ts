@@ -54,7 +54,7 @@ export class TilesConverter {
 
   static to_one_line_string(
     tiles: number[],
-    print_aka_dora: boolean = false
+    print_aka_dora: boolean = false,
   ): string {
     tiles = tiles.sort();
 
@@ -74,7 +74,7 @@ export class TilesConverter {
       return suits.length > 0
         ? suits
             .map((i: any) =>
-              i === red_five && print_aka_dora ? "0" : (i / 4 + 1).toString()
+              i === red_five && print_aka_dora ? "0" : (i / 4 + 1).toString(),
             )
             .join("") + suffix
         : "";
@@ -124,12 +124,12 @@ export class TilesConverter {
     pin?: string,
     man?: string,
     honors?: string,
-    has_aka_dora: boolean = false
+    has_aka_dora: boolean = false,
   ): TilesArray136[] {
     function _split_string(
       str: string | undefined,
       offset: number,
-      red?: number
+      red?: number,
     ): TilesArray136[] {
       let data: TilesArray136[] = [];
       let temp: TilesArray136[] = [];
@@ -168,7 +168,7 @@ export class TilesConverter {
     sou?: string,
     pin?: string,
     man?: string,
-    honors?: string
+    honors?: string,
   ): TilesArray34[] {
     let results = TilesConverter.string_to_136_array(sou, pin, man, honors);
     results = TilesConverter.to_34_array(results);
@@ -177,7 +177,7 @@ export class TilesConverter {
 
   static find_34_tile_in_136_array(
     tile34: number,
-    tiles: number[]
+    tiles: number[],
   ): number | null {
     if (tile34 === null || tile34 > 33) return null;
     let tile = tile34 * 4;
@@ -188,7 +188,7 @@ export class TilesConverter {
 
   static one_line_string_to_136_array(
     string: string,
-    has_aka_dora: boolean = false
+    has_aka_dora: boolean = false,
   ): TilesArray136[] {
     let sou = "";
     let pin = "";
@@ -214,17 +214,17 @@ export class TilesConverter {
       pin,
       man,
       honors,
-      has_aka_dora
+      has_aka_dora,
     );
   }
 
   static one_line_string_to_34_array(
     string: string,
-    has_aka_dora: boolean = false
+    has_aka_dora: boolean = false,
   ): TilesArray34[] {
     let results = TilesConverter.one_line_string_to_136_array(
       string,
-      has_aka_dora
+      has_aka_dora,
     );
     results = TilesConverter.to_34_array(results);
     return results;

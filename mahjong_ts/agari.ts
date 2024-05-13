@@ -14,7 +14,7 @@ export class Agari {
         let isolatedTile = isolatedTiles.pop();
         if (!isolatedTile) {
           throw new Error(
-            "isolatedTile is undefined, pythonではここでエラーを投げる"
+            "isolatedTile is undefined, pythonではここでエラーを投げる",
           );
         }
 

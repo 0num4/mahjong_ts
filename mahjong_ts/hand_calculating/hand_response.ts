@@ -16,7 +16,7 @@ export class HandResponse {
     yaku: Yaku[] | null = null,
     error: string | null = null,
     fu_details: any[] | null = null,
-    is_open_hand: boolean = false
+    is_open_hand: boolean = false,
   ) {
     this.cost = cost;
     this.han = han;

@@ -25,7 +25,7 @@ export class Meld {
     opened: boolean = true,
     called_tile?: any,
     who?: number,
-    from_who?: number
+    from_who?: number,
   ) {
     this.type = meld_type || null;
     this.tiles = tiles || [];
@@ -38,7 +38,7 @@ export class Meld {
   toString(): string {
     // Note: You will need to convert the 'to_one_line_string' method to TypeScript as well.
     return `Type: ${this.type}, Tiles: ${TilesConverter.to_one_line_string(
-      this.tiles
+      this.tiles,
     )} ${this.tiles}`;
   }
 

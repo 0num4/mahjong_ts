@@ -15,7 +15,7 @@ export class ScoresCalculator {
     han: number,
     fu: number,
     config: HandConfig,
-    isYakuman: boolean = false
+    isYakuman: boolean = false,
   ): Cost {
     let yakuLevel = "";
 
@@ -147,7 +147,7 @@ export class Aotenjou extends ScoresCalculator {
     han: number,
     fu: number,
     config: HandConfig,
-    isYakuman: boolean = false
+    isYakuman: boolean = false,
   ): Cost {
     let basePoints = fu * Math.pow(2, 2 + han);
     let rounded = Math.floor((basePoints + 99) / 100) * 100;

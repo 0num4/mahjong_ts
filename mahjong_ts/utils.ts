@@ -188,7 +188,7 @@ export function getPermutations(array: string | any[], size: any) {
 
 export function permutationsChatGPT<T>(
   elements: T[],
-  permutationLength: number
+  permutationLength: number,
 ): T[][] {
   var result: T[][] = [];
 
@@ -249,7 +249,7 @@ export function product<T>(array2d: T[][]): T[][] {
 
 export function combinations<T>(
   elements: T[],
-  combinationLength: number
+  combinationLength: number,
 ): T[][] {
   var result: T[][] = [];
 

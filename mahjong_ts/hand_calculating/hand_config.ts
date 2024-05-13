@@ -41,7 +41,7 @@ export class OptionalRules {
     has_sashikomi_yakuman = false,
     limit_to_sextuple_yakuman = true,
     paarenchan_needs_yaku = true,
-    has_daichisei = false
+    has_daichisei = false,
   ) {
     this.has_open_tanyao = has_open_tanyao;
     this.has_aka_dora = has_aka_dora;
@@ -109,7 +109,7 @@ export class HandConfig {
     kyoutaku_number = 0,
     tsumi_number = 0,
     paarenchan = 0,
-    options = new OptionalRules()
+    options = new OptionalRules(),
   ) {
     this.yaku = {}; // You need to replace this with your YakuConfig equivalent in TypeScript.
     this.options = options;

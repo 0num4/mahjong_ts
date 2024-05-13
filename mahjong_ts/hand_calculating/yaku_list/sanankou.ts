@@ -29,14 +29,14 @@ export class Sanankou extends Yaku {
     hand: any[],
     win_tile: number,
     melds: any[],
-    is_tsumo: boolean
+    is_tsumo: boolean,
   ): boolean {
     win_tile /= 4;
 
     let open_sets = melds.filter((x) => x.opened).map((x) => x.tiles_34);
 
     let chi_sets = hand.filter(
-      (x) => is_chi(x) && x.includes(win_tile) && !open_sets.includes(x)
+      (x) => is_chi(x) && x.includes(win_tile) && !open_sets.includes(x),
     );
     let pon_sets = hand.filter((x) => is_pon_or_kan(x));
 

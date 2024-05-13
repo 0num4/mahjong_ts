@@ -15,12 +15,12 @@ class Shanten {
   calculate_shanten(
     tiles_34: number[],
     use_chiitoitsu: boolean = true,
-    use_kokushi: boolean = true
+    use_kokushi: boolean = true,
   ): number {
     let shanten_results = [this.calculate_shanten_for_regular_hand(tiles_34)];
     if (use_chiitoitsu) {
       shanten_results.push(
-        this.calculate_shanten_for_chiitoitsu_hand(tiles_34)
+        this.calculate_shanten_for_chiitoitsu_hand(tiles_34),
       );
     }
     if (use_kokushi) {
@@ -43,11 +43,11 @@ class Shanten {
 
     let completed_terminals = indices.reduce(
       (acc, i) => acc + (tiles_34[i] >= 2 ? 1 : 0),
-      0
+      0,
     );
     let terminals = indices.reduce(
       (acc, i) => acc + (tiles_34[i] !== 0 ? 1 : 0),
-      0
+      0,
     );
 
     return 13 - terminals - (completed_terminals ? 1 : 0);

@@ -28,7 +28,7 @@ export class Suuankou extends Yaku {
   is_condition_met(hand: any[], win_tile: number, is_tsumo: boolean): boolean {
     win_tile = Math.floor(win_tile / 4);
     let closed_hand = hand.filter(
-      (item) => !(is_pon_or_kan(item) && item.includes(win_tile) && !is_tsumo)
+      (item) => !(is_pon_or_kan(item) && item.includes(win_tile) && !is_tsumo),
     );
     return closed_hand.filter((item) => is_pon_or_kan(item)).length == 4;
   }

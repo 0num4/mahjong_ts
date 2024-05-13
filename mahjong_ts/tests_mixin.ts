@@ -12,7 +12,7 @@ class TestMixin {
     sou = "",
     pin = "",
     man = "",
-    honors = ""
+    honors = "",
   ): number[] {
     let openSet = TilesConverter.string_to_136_array(sou, pin, man, honors);
     openSet[0] /= 4;
@@ -31,7 +31,7 @@ class TestMixin {
     sou = "",
     pin = "",
     man = "",
-    honors = ""
+    honors = "",
   ): number[] {
     return TilesConverter.string_to_34_array(sou, pin, man, honors);
   }
@@ -40,7 +40,7 @@ class TestMixin {
     sou = "",
     pin = "",
     man = "",
-    honors = ""
+    honors = "",
   ): number[] {
     return TilesConverter.string_to_136_array(sou, pin, man, honors);
   }
@@ -68,7 +68,7 @@ class TestMixin {
     man = "",
     pin = "",
     sou = "",
-    honors = ""
+    honors = "",
   ): Meld {
     let tiles = this._stringTo136Array(man, pin, sou, honors);
     let meld = new Meld(tiles, meldType, isOpen, tiles[0], 0);
@@ -101,7 +101,7 @@ class TestMixin {
     limitToSextupleYakuman = true,
     paarenchanNeedsYaku = true,
     hasDaichisei = false,
-    paarenchan = 0
+    paarenchan = 0,
   ): HandConfig {
     let options = new OptionalRules(
       hasOpenTanyao,
@@ -117,7 +117,7 @@ class TestMixin {
       hasDaichisei,
       hasSashikomiYakuman,
       limitToSextupleYakuman,
-      paarenchanNeedsYaku
+      paarenchanNeedsYaku,
     );
 
     console.log(isOpenRiichi);
@@ -140,7 +140,7 @@ class TestMixin {
       0, // 供託
       0, // 詰み(リー棒か？)
       paarenchan,
-      options
+      options,
     );
   }
 }

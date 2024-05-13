@@ -27,7 +27,7 @@ export class SanKantsu extends Yaku {
 
   is_condition_met(hand: any[], melds: any[], ...args: any[]): boolean {
     let kan_sets = melds.filter(
-      (x) => x.type == Meld.KAN || x.type == Meld.SHOUMINKAN
+      (x) => x.type == Meld.KAN || x.type == Meld.SHOUMINKAN,
     );
     return kan_sets.length == 3;
   }

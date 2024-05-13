@@ -31,7 +31,7 @@ export class FuCalculator {
     win_group: Tile[],
     config: HandConfig,
     valued_tiles: Tile[] = [], //多分numberでutilとかで定義してるやつ
-    melds: Meld[] = []
+    melds: Meld[] = [],
   ) {
     let win_tile_34 = Math.floor(win_tile / 4);
 
@@ -68,7 +68,7 @@ export class FuCalculator {
     }
 
     let count_of_valued_pairs = valued_tiles.filter(
-      (x) => x === pair[0]
+      (x) => x === pair[0],
     ).length;
 
     if (count_of_valued_pairs === 1) {
@@ -91,7 +91,7 @@ export class FuCalculator {
         ? open_meld.type === Meld.KAN || open_meld.type === Meld.SHOUMINKAN
         : false;
       let is_honor = [...TERMINAL_INDICES, ...HONOR_INDICES].includes(
-        set_item[0]
+        set_item[0],
       );
 
       if (!config.is_tsumo && set_item === win_group) {

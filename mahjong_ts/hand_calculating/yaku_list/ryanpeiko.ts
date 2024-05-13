@@ -29,7 +29,7 @@ export class Ryanpeikou extends Yaku {
     let chi_sets = hand.filter((item) => is_chi(item));
     let count_of_identical_chi = chi_sets.map(
       (x) =>
-        chi_sets.filter((y) => JSON.stringify(y) === JSON.stringify(x)).length
+        chi_sets.filter((y) => JSON.stringify(y) === JSON.stringify(x)).length,
     );
     return count_of_identical_chi.filter((x) => x >= 2).length == 4;
   }

@@ -22,7 +22,7 @@ export class HandDivider {
   divideHand(
     tiles34: number[],
     melds: Meld[] | null = null,
-    useCache: boolean = false
+    useCache: boolean = false,
   ): any[] {
     if (melds === null) {
       melds = [];
@@ -121,7 +121,7 @@ export class HandDivider {
   findPairs(
     tiles34: number[],
     firstIndex: number = 0,
-    secondIndex: number = 33
+    secondIndex: number = 33,
   ): number[] {
     let pairIndices: number[] = [];
     for (let x = firstIndex; x <= secondIndex; x++) {
@@ -139,7 +139,7 @@ export class HandDivider {
     tiles34: number[],
     firstIndex: number,
     secondIndex: number,
-    handNotCompleted: boolean = false
+    handNotCompleted: boolean = false,
   ): any[] {
     let indices: number[] = [];
     for (let x = firstIndex; x <= secondIndex; x++) {
