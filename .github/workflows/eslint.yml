@@ -27,3 +27,7 @@ jobs:
         run: yarn install --frozen-lockfile
         env:
           CI: true
+      - name: vite build
+        run: yarn dev
+        env:
+          CI: true
