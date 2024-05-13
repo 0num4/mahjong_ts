@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "main": "main.ts",
   "license": "MIT",
+  "engines": {
+    "node": "^22.0.0"
+  },
   "devDependencies": {
     "@types/node": "^20.4.2",
     "typescript": "^5.1.6",
