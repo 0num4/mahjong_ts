@@ -77,3 +77,26 @@ setuptools を使っている
 Administrator in mahjong_ts on  feat/pydantic-types [!] is 📦 v0.1.0 via 🐍 v3.10.6 (mahjong-ts-py3.10)
 ❯ python.bat .\doc\examples.py
 ```
+
+# CI status
+
+## Typescript
+
+[![tslint](https://github.com/0num4/mahjong_ts/actions/workflows/eslint.yml/badge.svg)](https://github.com/0num4/mahjong_ts/actions/workflows/eslint.yml)
+
+- eslint
+- biome
+- test(vitest とか？)
+- document
+
+## Python
+
+- mypy
+- flake8
+- black
+- isort
+- ruff
+- pytest
+- pyright
+- matrix-test
+- document
