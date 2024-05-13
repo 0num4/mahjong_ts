@@ -18,14 +18,14 @@ export const FIVE_RED_PIN: number = 52;
 export const FIVE_RED_SOU: number = 88;
 
 export const AKA_DORA_LIST: number[] = [
-	FIVE_RED_MAN,
-	FIVE_RED_PIN,
-	FIVE_RED_SOU,
+  FIVE_RED_MAN,
+  FIVE_RED_PIN,
+  FIVE_RED_SOU,
 ];
 
 export const DISPLAY_WINDS: { [key: number]: string } = {
-	[EAST]: "East",
-	[SOUTH]: "South",
-	[WEST]: "West",
-	[NORTH]: "North",
+  [EAST]: "East",
+  [SOUTH]: "South",
+  [WEST]: "West",
+  [NORTH]: "North",
 };
