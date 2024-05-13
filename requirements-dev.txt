@@ -8,5 +8,5 @@ flake8-simplify==0.19.3
 dlint==0.14.1
 
 # to release on pypi
-wheel==0.41.1
+wheel==0.41.3
 twine==4.0.2
