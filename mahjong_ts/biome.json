@@ -4,9 +4,23 @@
     "enabled": true
   },
   "linter": {
-    "enabled": false,
+    "enabled": true,
     "rules": {
-      "all": false
+      "suspicious": {
+        "all": false
+      },
+      "correctness": {
+        "all": false
+      },
+      "nursery": {
+        "all": false
+      },
+      "complexity": {
+        "all": false
+      },
+      "style": {
+        "all": false
+      }
     }
   },
   "formatter": {
