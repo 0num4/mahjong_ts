@@ -1,5 +1,5 @@
-import { Yaku } from "../../yaku";
 import { is_chi } from "../../utils";
+import { Yaku } from "../../yaku";
 
 export class Iipeiko extends Yaku {
   tenhou_id: number;

@@ -1,4 +1,4 @@
-import { Yaku } from "../../../yaku";
+import { HONOR_INDICES, TERMINAL_INDICES } from "../../../constants";
 import {
   is_man,
   is_pair,
@@ -7,7 +7,7 @@ import {
   is_sou,
   simplify,
 } from "../../../utils";
-import { TERMINAL_INDICES, HONOR_INDICES } from "../../../constants";
+import { Yaku } from "../../../yaku";
 
 export class DaburuChuurenPoutou extends Yaku {
   tenhou_id: number;

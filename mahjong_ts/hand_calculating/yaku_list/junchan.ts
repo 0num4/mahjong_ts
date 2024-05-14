@@ -1,6 +1,6 @@
-import { Yaku } from "../../yaku";
-import { is_chi } from "../../utils";
 import { TERMINAL_INDICES } from "../../constants";
+import { is_chi } from "../../utils";
+import { Yaku } from "../../yaku";
 
 export class Junchan extends Yaku {
   tenhou_id: number;

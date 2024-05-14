@@ -1,5 +1,5 @@
-import { Yaku } from "../../yaku";
 import { HONOR_INDICES, TERMINAL_INDICES } from "../../constants";
+import { Yaku } from "../../yaku";
 
 export class Tanyao extends Yaku {
   tenhou_id: number;

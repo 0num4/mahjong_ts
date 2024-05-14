@@ -1,5 +1,5 @@
-import { Yaku } from "../../yaku";
 import { Meld } from "../../meld";
+import { Yaku } from "../../yaku";
 
 export class SanKantsu extends Yaku {
   tenhou_id: number;

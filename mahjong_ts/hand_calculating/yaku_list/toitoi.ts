@@ -1,5 +1,5 @@
+import { is_chi, is_pair, is_pon_or_kan } from "../../utils";
 import { Yaku } from "../../yaku";
-import { is_chi, is_pon_or_kan, is_pair } from "../../utils";
 
 export class Toitoi extends Yaku {
   tenhou_id: number;

@@ -1,5 +1,5 @@
-import { Yaku } from "../../../yaku";
 import { HATSU } from "../../../constants";
+import { Yaku } from "../../../yaku";
 
 export class Ryuuiisou extends Yaku {
   tenhou_id: number;

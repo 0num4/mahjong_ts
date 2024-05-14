@@ -1,14 +1,14 @@
+import * as crypto from "crypto";
+import { permutations } from "itertools";
 import { HONOR_INDICES } from "../constants";
 import { Meld } from "../meld";
 import {
-  product,
   combinations,
   getPermutations,
   permutationsChatGPT,
+  product,
 } from "../utils";
 import { is_chi, is_pon } from "../utils";
-import * as crypto from "crypto";
-import { permutations } from "itertools";
 
 export class HandDivider {
   private dividerCache: { [key: string]: any[] };

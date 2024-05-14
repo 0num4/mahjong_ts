@@ -1,6 +1,6 @@
 import { NORTH } from "../../constants";
-import { Yaku } from "../../yaku";
 import { is_pon_or_kan } from "../../utils";
+import { Yaku } from "../../yaku";
 
 export class YakuhaiNorth extends Yaku {
   tenhouId: number;
