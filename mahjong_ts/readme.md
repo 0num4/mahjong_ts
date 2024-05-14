@@ -55,3 +55,7 @@ check ━━━
 
 https://biomejs.dev/analyzer/import-sorting/
 import sort だけはまた別で存在する
+
+## yarn biome ci .について
+
+lint と format のチェックどちらも行ってくれるっぽい
