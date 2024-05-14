@@ -1,5 +1,5 @@
-import { Yaku } from "../../../yaku";
 import { is_man, is_pin, is_sou, simplify } from "../../../utils";
+import { Yaku } from "../../../yaku";
 
 export class Daisharin extends Yaku {
   tenhou_id: number;

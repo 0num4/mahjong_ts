@@ -1,6 +1,6 @@
-import { Yaku } from "../../../yaku";
 import { HONOR_INDICES } from "../../../constants";
 import { all } from "../../../utils";
+import { Yaku } from "../../../yaku";
 export class Daichisei extends Yaku {
   tenhou_id: number;
   name: string;

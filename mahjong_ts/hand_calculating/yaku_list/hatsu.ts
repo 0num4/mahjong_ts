@@ -1,6 +1,6 @@
-import { Yaku } from "../../yaku";
-import { is_pon_or_kan } from "../../utils";
 import { HATSU } from "../../constants";
+import { is_pon_or_kan } from "../../utils";
+import { Yaku } from "../../yaku";
 
 export class Hatsu extends Yaku {
   tenhouId: number;

@@ -1,5 +1,5 @@
-import { Yaku } from "../../../yaku";
 import { TERMINAL_INDICES } from "../../../constants";
+import { Yaku } from "../../../yaku";
 
 export class DaburuKokushiMusou extends Yaku {
   tenhou_id: number;

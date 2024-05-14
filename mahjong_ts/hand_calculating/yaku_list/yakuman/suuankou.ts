@@ -1,5 +1,5 @@
-import { Yaku } from "../../../yaku";
 import { is_pon_or_kan } from "../../../utils";
+import { Yaku } from "../../../yaku";
 
 export class Suuankou extends Yaku {
   tenhou_id: number;
