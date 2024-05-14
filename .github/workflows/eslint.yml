@@ -35,3 +35,18 @@ jobs:
         run: yarn dev
         env:
           CI: true
+  biome:
+    defaults:
+      run:
+        working-directory: mahjong_ts
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup Biome
+        uses: biomejs/setup-biome@v2
+        with:
+          version: latest
+      - name: Run Biome
+        run: biome ci .
