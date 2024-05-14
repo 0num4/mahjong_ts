@@ -1,0 +1,28 @@
+name: "run with bun and test"
+on:
+  push:
+    paths:
+      - mahjong_ts/**
+    branches:
+      - master
+      - main
+  pull_request:
+    branches:
+      - master
+      - main
+jobs:
+  bun:
+    defaults:
+      run:
+        working-directory: mahjong_ts
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Install Bun
+        uses: oven-sh/setup-bun@v1
+      - name: Install dependencies
+        run: bun install
+      - name: 適当なファイルを走らせてみる
+        run: bun tests_mixin.ts
