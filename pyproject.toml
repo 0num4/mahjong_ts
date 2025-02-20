@@ -45,7 +45,7 @@ flake8-print = "5.0.0"
 flake8-simplify = "0.20.0"
 flake8-bugbear = "23.7.10"
 pydantic = "2.1.1"
-wheel = "0.41.3"
+wheel = "0.45.1"
 twine = "4.0.2"
 
 
