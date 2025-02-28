@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "crypto": "1.0.1",
-    "itertools": "2.1.2",
+    "itertools": "2.4.1",
     "tslib": "2.6.3"
   }
 }
