@@ -18,13 +18,13 @@ jobs:
         working-directory: mahjong_ts
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4.4.0
         with:
           fetch-depth: 0
       - name: ls -lah
         run: ls -lah
       - name: Use Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v4.4.0
         with:
           node-version-file: mahjong_ts/package.json
       - name: Install dependencies
@@ -41,11 +41,11 @@ jobs:
         working-directory: mahjong_ts
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4.4.0
         with:
           fetch-depth: 0
       - name: Setup Biome
-        uses: biomejs/setup-biome@v2
+        uses: biomejs/setup-biome@v2.7.1
         with:
           version: latest
       - name: Run Biome
